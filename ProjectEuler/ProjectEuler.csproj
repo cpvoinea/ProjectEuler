@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{43938553-30BF-4422-89E9-B60D8524F8E5}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProjectEuler</RootNamespace>
+    <AssemblyName>ProjectEuler</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="000-025\Problem019.cs" />
+    <Compile Include="000-025\Problem020.cs" />
+    <Compile Include="000-025\Problem021.cs" />
+    <Compile Include="000-025\Problem022.cs" />
+    <Compile Include="000-025\Problem023.cs" />
+    <Compile Include="000-025\Problem024.cs" />
+    <Compile Include="025-050\Problem026.cs" />
+    <Compile Include="025-050\Problem027.cs" />
+    <Compile Include="025-050\Problem028.cs" />
+    <Compile Include="025-050\Problem029.cs" />
+    <Compile Include="025-050\Problem030.cs" />
+    <Compile Include="025-050\Problem031.cs" />
+    <Compile Include="025-050\Problem032.cs" />
+    <Compile Include="025-050\Problem033.cs" />
+    <Compile Include="025-050\Problem034.cs" />
+    <Compile Include="025-050\Problem035.cs" />
+    <Compile Include="025-050\Problem036.cs" />
+    <Compile Include="025-050\Problem037.cs" />
+    <Compile Include="025-050\Problem038.cs" />
+    <Compile Include="025-050\Problem039.cs" />
+    <Compile Include="025-050\Problem040.cs" />
+    <Compile Include="025-050\Problem041.cs" />
+    <Compile Include="025-050\Problem042.cs" />
+    <Compile Include="025-050\Problem043.cs" />
+    <Compile Include="025-050\Problem044.cs" />
+    <Compile Include="025-050\Problem045.cs" />
+    <Compile Include="025-050\Problem046.cs" />
+    <Compile Include="025-050\Problem047.cs" />
+    <Compile Include="025-050\Problem048.cs" />
+    <Compile Include="025-050\Problem049.cs" />
+    <Compile Include="025-050\Problem050.cs" />
+    <Compile Include="050-075\Problem056.cs" />
+    <Compile Include="050-075\Problem051.cs" />
+    <Compile Include="050-075\Problem052.cs" />
+    <Compile Include="050-075\Problem053.cs" />
+    <Compile Include="050-075\Problem054.cs" />
+    <Compile Include="050-075\Problem055.cs" />
+    <Compile Include="050-075\Problem057.cs" />
+    <Compile Include="050-075\Problem058.cs" />
+    <Compile Include="050-075\Problem059.cs" />
+    <Compile Include="050-075\Problem060.cs" />
+    <Compile Include="050-075\Problem061.cs" />
+    <Compile Include="050-075\Problem062.cs" />
+    <Compile Include="050-075\Problem063.cs" />
+    <Compile Include="050-075\Problem064.cs" />
+    <Compile Include="050-075\Problem065.cs" />
+    <Compile Include="050-075\Problem066.cs" />
+    <Compile Include="Common.cs" />
+    <Compile Include="IProblem.cs" />
+    <Compile Include="000-025\Problem001.cs" />
+    <Compile Include="000-025\Problem002.cs" />
+    <Compile Include="000-025\Problem003.cs" />
+    <Compile Include="000-025\Problem004.cs" />
+    <Compile Include="000-025\Problem005.cs" />
+    <Compile Include="000-025\Problem006.cs" />
+    <Compile Include="000-025\Problem007.cs" />
+    <Compile Include="000-025\Problem008.cs" />
+    <Compile Include="000-025\Problem009.cs" />
+    <Compile Include="000-025\Problem010.cs" />
+    <Compile Include="000-025\Problem011.cs" />
+    <Compile Include="000-025\Problem012.cs" />
+    <Compile Include="000-025\Problem013.cs" />
+    <Compile Include="000-025\Problem014.cs" />
+    <Compile Include="000-025\Problem015.cs" />
+    <Compile Include="000-025\Problem016.cs" />
+    <Compile Include="000-025\Problem017.cs" />
+    <Compile Include="000-025\Problem025.cs" />
+    <Compile Include="000-025\Problem018.cs" />
+    <Compile Include="050-075\Problem067.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Problem018.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Problem022.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Problem042.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Problem054.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Problem059.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Problem067.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
