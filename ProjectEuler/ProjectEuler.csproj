@@ -107,6 +107,7 @@
     <Compile Include="000-025\Problem025.cs" />
     <Compile Include="000-025\Problem018.cs" />
     <Compile Include="051-075\Problem067.cs" />
+    <Compile Include="Problem079.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -128,6 +129,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Problem067.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Problem079.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

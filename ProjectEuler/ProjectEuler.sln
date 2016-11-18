@@ -1,4 +1,7 @@
-﻿Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectEuler", "ProjectEuler.csproj", "{43938553-30BF-4422-89E9-B60D8524F8E5}"
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectEuler", "ProjectEuler.csproj", "{43938553-30BF-4422-89E9-B60D8524F8E5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

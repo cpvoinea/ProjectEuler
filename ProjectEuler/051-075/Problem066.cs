@@ -4,27 +4,79 @@ namespace ProjectEuler
 {
     class Problem066 : IProblem
     {
-        class Fraction
+        struct Fraction { internal string H; internal string K; }
+
+        Fraction Calculate(Stack<double> s)
         {
+            Fraction result = new Fraction { H = "0", K = "1" };
+            foreach(double i in s)
+            {
+                if (result.H == "0")
+                    result = new Fraction { H = i.ToString(), K = "1" };
+                else
+                    result = new Fraction
+                    {
+                        H = Common.AddLargeInt(Common.MultiplyLargeInt(result.H, i.ToString()), result.K),
+                        K = result.H
+                    };
+            }
+
+            return result;
+        }
+
+        bool IsSolution(Stack<double> s, double n)
+        {
+            var f = Calculate(s);
+            var h = Common.MultiplyLargeInt(f.H, f.H);
+            var k = Common.AddLargeInt(Common.MultiplyLargeInt(Common.MultiplyLargeInt(f.K, f.K), n.ToString()), "1");
+
+            return h == k;
         }
 
         public string GetResult()
         {
-            HashSet<short> candidates = new HashSet<short>();
-            for (short i = 1; i <= 1000; i++)
+            HashSet<double> candidates = new HashSet<double>();
+            for (double i = 1; i <= 1000; i++)
                 candidates.Add(i);
-            for (short i = 1; i <= 31; i++)
-                candidates.Remove((short)(i * i));
+            for (double i = 1; i <= 31; i++)
+                candidates.Remove(i * i);
 
-            foreach(short n in candidates)
+            double nmax = 0;
+            double max = 0;
+            foreach (double n in candidates)
             {
-                short r = 1;
-                while (r * r < n)
-                    r++;
-                r--;
+                double up = 1;
+                while (up * up < n)
+                    up++;
+                up--;
+                Stack<double> vals = new Stack<double>();
+                vals.Push(up);
+                double down = n - up * up;
+                while (!IsSolution(vals, n))
+                {
+                    up = down - up;
+                    double i = 1;
+                    while (up < 0 || up * up < n)
+                    {
+                        i++;
+                        up += down;
+                    }
+                    i--;
+                    up -= down;
+                    down = (n - up * up) / down;
+                    vals.Push(i);
+                }
+
+                var f = Calculate(vals);
+                double v = double.Parse(f.H);
+                if (v > max)
+                {
+                    max = v;
+                    nmax = n;
+                }
             }
 
-            return "";
+            return nmax.ToString();
         }
     }
 }
