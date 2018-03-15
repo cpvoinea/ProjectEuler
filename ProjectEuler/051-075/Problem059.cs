@@ -13,7 +13,7 @@ namespace ProjectEuler
 
         public string GetResult()
         {
-            byte[] cipher = Common.GetTextFromFile("Problem059.txt").Split(',').Select(n => byte.Parse(n)).ToArray();
+            byte[] cipher = Common.GetTextFromFile("Resources\\Problem059.txt").Split(',').Select(n => byte.Parse(n)).ToArray();
 
             List<byte> letters = new List<byte>();
             for (char c = 'a'; c <= 'z'; c++)

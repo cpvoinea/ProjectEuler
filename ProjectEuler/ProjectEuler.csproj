@@ -38,12 +38,12 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="000-025\Problem019.cs" />
-    <Compile Include="000-025\Problem020.cs" />
-    <Compile Include="000-025\Problem021.cs" />
-    <Compile Include="000-025\Problem022.cs" />
-    <Compile Include="000-025\Problem023.cs" />
-    <Compile Include="000-025\Problem024.cs" />
+    <Compile Include="001-025\Problem019.cs" />
+    <Compile Include="001-025\Problem020.cs" />
+    <Compile Include="001-025\Problem021.cs" />
+    <Compile Include="001-025\Problem022.cs" />
+    <Compile Include="001-025\Problem023.cs" />
+    <Compile Include="001-025\Problem024.cs" />
     <Compile Include="026-050\Problem026.cs" />
     <Compile Include="026-050\Problem027.cs" />
     <Compile Include="026-050\Problem028.cs" />
@@ -85,55 +85,60 @@
     <Compile Include="051-075\Problem064.cs" />
     <Compile Include="051-075\Problem065.cs" />
     <Compile Include="051-075\Problem066.cs" />
+    <Compile Include="051-075\Problem068.cs" />
     <Compile Include="Common.cs" />
     <Compile Include="IProblem.cs" />
-    <Compile Include="000-025\Problem001.cs" />
-    <Compile Include="000-025\Problem002.cs" />
-    <Compile Include="000-025\Problem003.cs" />
-    <Compile Include="000-025\Problem004.cs" />
-    <Compile Include="000-025\Problem005.cs" />
-    <Compile Include="000-025\Problem006.cs" />
-    <Compile Include="000-025\Problem007.cs" />
-    <Compile Include="000-025\Problem008.cs" />
-    <Compile Include="000-025\Problem009.cs" />
-    <Compile Include="000-025\Problem010.cs" />
-    <Compile Include="000-025\Problem011.cs" />
-    <Compile Include="000-025\Problem012.cs" />
-    <Compile Include="000-025\Problem013.cs" />
-    <Compile Include="000-025\Problem014.cs" />
-    <Compile Include="000-025\Problem015.cs" />
-    <Compile Include="000-025\Problem016.cs" />
-    <Compile Include="000-025\Problem017.cs" />
-    <Compile Include="000-025\Problem025.cs" />
-    <Compile Include="000-025\Problem018.cs" />
+    <Compile Include="001-025\Problem001.cs" />
+    <Compile Include="001-025\Problem002.cs" />
+    <Compile Include="001-025\Problem003.cs" />
+    <Compile Include="001-025\Problem004.cs" />
+    <Compile Include="001-025\Problem005.cs" />
+    <Compile Include="001-025\Problem006.cs" />
+    <Compile Include="001-025\Problem007.cs" />
+    <Compile Include="001-025\Problem008.cs" />
+    <Compile Include="001-025\Problem009.cs" />
+    <Compile Include="001-025\Problem010.cs" />
+    <Compile Include="001-025\Problem011.cs" />
+    <Compile Include="001-025\Problem012.cs" />
+    <Compile Include="001-025\Problem013.cs" />
+    <Compile Include="001-025\Problem014.cs" />
+    <Compile Include="001-025\Problem015.cs" />
+    <Compile Include="001-025\Problem016.cs" />
+    <Compile Include="001-025\Problem017.cs" />
+    <Compile Include="001-025\Problem025.cs" />
+    <Compile Include="001-025\Problem018.cs" />
     <Compile Include="051-075\Problem067.cs" />
-    <Compile Include="Problem079.cs" />
-    <Compile Include="Problem097.cs" />
-    <Compile Include="Problem206.cs" />
+    <Compile Include="076-100\Problem079.cs" />
+    <Compile Include="076-100\Problem089.cs" />
+    <Compile Include="076-100\Problem092.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="Problem018.txt">
+    <Content Include="Resources\Problem018.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Problem022.txt">
+    <Content Include="Resources\Problem022.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Problem042.txt">
+    <Content Include="Resources\Problem042.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Problem054.txt">
+    <Content Include="Resources\Problem054.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Problem059.txt">
+    <Content Include="Resources\Problem059.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Problem067.txt">
+    <Content Include="Resources\Problem067.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Problem079.txt">
+    <Content Include="Resources\Problem079.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Problem081.txt" />
+    <Content Include="Resources\Problem089.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

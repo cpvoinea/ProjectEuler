@@ -152,7 +152,7 @@ namespace ProjectEuler
 
 		public string GetResult()
 		{
-			StreamReader sr = new StreamReader("Problem018.txt");
+			StreamReader sr = new StreamReader("Resources\\Problem018.txt");
 			List<int[]> lines = new List<int[]>();
 			while (!sr.EndOfStream)
 				lines.Add(sr.ReadLine().Split().Select(s => int.Parse(s)).ToArray());

@@ -13,7 +13,7 @@ namespace ProjectEuler
             for (int i = 0; i < limit; i++)
                 triangleNumbers.Add(i * (i + 1) / 2);
             int count = 0;
-            string[] words = Common.GetTextFromFile("Problem042.txt").Split(',').Select(w => w.Trim('"')).ToArray();
+            string[] words = Common.GetTextFromFile("Resources\\Problem042.txt").Split(',').Select(w => w.Trim('"')).ToArray();
             foreach (string w in words)
             {
                 int s = 0;

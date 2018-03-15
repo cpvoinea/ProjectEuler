@@ -81,7 +81,7 @@ namespace ProjectEuler
 		public string GetResult()
 		{
 			List<int[]> lines = new List<int[]>();
-			StreamReader sr = new StreamReader("Problem067.txt");
+			StreamReader sr = new StreamReader("Resources\\Problem067.txt");
 			while (!sr.EndOfStream)
 				lines.Add(sr.ReadLine().Split().Select(s => int.Parse(s)).ToArray());
 			//foreach (Node n in lines[lines.Count - 1])

@@ -15,7 +15,7 @@ namespace ProjectEuler
 
 		public string GetResult()
 		{
-			string namesStr = Common.GetTextFromFile("Problem022.txt");
+			string namesStr = Common.GetTextFromFile("Resources\\Problem022.txt");
 			string[] names = namesStr.Split(',').Select(s => s.Trim('"')).OrderBy(s => s).ToArray();
 
 			long sum = 0;
