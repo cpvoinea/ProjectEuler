@@ -111,11 +111,22 @@
     <Compile Include="076-100\Problem079.cs" />
     <Compile Include="076-100\Problem089.cs" />
     <Compile Include="076-100\Problem092.cs" />
+    <Compile Include="051-075\Problem069.cs" />
+    <Compile Include="051-075\Problem071.cs" />
+    <Compile Include="076-100\Problem076.cs" />
+    <Compile Include="076-100\Problem081.cs" />
+    <Compile Include="076-100\Problem097.cs" />
+    <Compile Include="100+\Problem206.cs" />
+    <Compile Include="076-100\Problem099.cs" />
+    <Compile Include="Problem357.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Resources\Problem099.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Problem018.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -137,7 +148,9 @@
     <Content Include="Resources\Problem079.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Problem081.txt" />
+    <Content Include="Resources\Problem081.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Problem089.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
