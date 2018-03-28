@@ -1,31 +1,32 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
 namespace ProjectEuler
 {
-	public class Common
-	{
-		internal static int Fact(int n)
-		{
-			if (n <= 1)
-				return 1;
-			return n * Fact(n - 1);
-		}
+    public class Common
+    {
+        internal static int Fact(int n)
+        {
+            if (n <= 1)
+                return 1;
+            return n * Fact(n - 1);
+        }
 
-		internal static int GetSumOfDivisorsOf(int n)
-		{
-			if (n == 1)
-				return 1;
+        internal static int GetSumOfDivisorsOf(int n)
+        {
+            if (n == 1)
+                return 1;
 
-			double sqrt = Math.Sqrt(n);
-			int s = 1;
-			for (int i = 2; i <= sqrt; i++)
-				if (n % i == 0)
-					s += i + (i != n / i ? n / i : 0);
-			return s;
-		}
+            double sqrt = Math.Sqrt(n);
+            int s = 1;
+            for (int i = 2; i <= sqrt; i++)
+                if (n % i == 0)
+                    s += i + (i != n / i ? n / i : 0);
+            return s;
+        }
 
         internal static int GetSumOfDigits(string str)
         {
@@ -35,34 +36,33 @@ namespace ProjectEuler
             return n;
         }
 
-        /// <summary>
-        /// n <= 1000000
-        /// </summary>
-        /// <param name="n"></param>
-        /// <returns></returns>
-        internal static List<int> GetPrimeNumbersLowerThan(int n)
-		{
-			//List<int> result = Enumerable.Range(2, n - 2).ToList();
-			//for (int i = 2; i <= n / 2; i++)
-			//{
-			//    int k = 1;
-			//    int m = k * i;
-			//    while (m < n)
-			//    {
-			//        result.Remove(m);
-			//        k++;
-			//        m = k * i;
-			//    }
-			//}
+        internal static BitArray GeneratePrimes(int limit)
+        {
+            BitArray bits = new BitArray(limit + 1, true);
+            bits[0] = false;
+            bits[1] = false;
+            for (int i = 0; i * i <= limit; i++)
+            {
+                if (bits[i])
+                {
+                    for (int j = i * i; j <= limit; j += i)
+                    {
+                        bits[j] = false;
+                    }
+                }
+            }
+            return bits;
+        }
 
-			//return result;
-
-			return Enumerable.Range(0, (int)Math.Sqrt(n)).Aggregate(Enumerable.Range(2, n).ToList(), (acc, idx) =>
-			{
-				acc.RemoveAll(i => i > acc[idx] && i % acc[idx] == 0);
-				return acc;
-			});
-		}
+        internal static List<int> GetPrimeNumbersLowerThan(int limit)
+        {
+            var primes = GeneratePrimes(limit);
+            List<int> result = new List<int>();
+            for (int i = 2; i < limit; i++)
+                if (primes[i])
+                    result.Add(i);
+            return result;
+        }
 
 		internal static bool IsPrime(long n)
 		{
