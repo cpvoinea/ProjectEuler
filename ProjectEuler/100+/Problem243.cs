@@ -1,40 +1,51 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace ProjectEuler
 {
     class Problem243 : IProblem
     {
+        void AddCandidates(List<int> candidates, int current, int i, int max, int[] primes)
+        {
+            if (i >= primes.Length || current * primes[i] > max)
+                return;
+            int c = current * primes[i];
+            candidates.Add(c);
+            AddCandidates(candidates, c, i, max, primes);
+            AddCandidates(candidates, current, i + 1, max, primes);
+        }
+
         public string GetResult()
         {
-            //15499/94744
-            // https://en.wikipedia.org/wiki/Euler%27s_totient_function
-            int n = 12;
-            bool ok = false;
-            while (!ok)
+            var primes = Common.GetPrimeNumbersLowerThan(100);
+            long n = 1;
+            double f = 1;
+            int maxPrime = 0;
+            foreach (int p in primes)
             {
-                n++;
-                BitArray a = new BitArray(n + 1);
-                for (int i = 2; i <= Math.Sqrt(n); i++)
+                n *= p;
+                f *= (p - 1);
+                double m = f * 94744.0 / 15499 / (n - 1);
+                if (m < 1)
                 {
-                    if (n % i == 0)
-                    {
-                        int j = i;
-                        while (j <= n)
-                        {
-                            a[j] = true;
-                            j += i;
-                        }
-                    }
+                    n /= p;
+                    f /= (p - 1);
+                    maxPrime = p;
+                    break;
                 }
-
-                int c = 0;
-                for (int i = 1; i < n; i++)
-                    if (!a[i])
-                        c++;
-                ok = c * 94744L < (n - 1) * 15499L;
             }
-            return n.ToString();
+
+            List<int> candidates = new List<int>();
+            AddCandidates(candidates, 1, 0, maxPrime, primes.Where(x => x < maxPrime).ToArray());
+            candidates.Sort();
+            foreach(int c in candidates)
+            {
+                double m = f * c * 94744.0 / 15499 / (n * c - 1);
+                if (m < 1)
+                    return (n * c).ToString();
+            }
+
+            return "N/A";
         }
     }
 }
