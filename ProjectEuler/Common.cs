@@ -145,6 +145,38 @@ namespace ProjectEuler
 				return (AddLargeInt(n1.Substring(0, l1 - l2), r.ToString()) + result).TrimStart('0');
 		}
 
+        internal static string SubtractLargeInt(string n1, string n2)
+        {
+            if (n1 == "" || n2 == "")
+                return n1 + n2;
+
+            int l1 = n1.Length;
+            int l2 = n2.Length;
+            bool positive = GreaterThanLargeInt(n1, n2);
+            if (!positive)
+                return "-" + SubtractLargeInt(n2, n1);
+            int min = positive ? l1 : l2;
+            string result = "";
+            int r = 0;
+            for (int i = 0; i < min; i++)
+            {
+                int s = n1[l1 - i - 1] - n2[l2 - i - 1] - r;
+                if (s < 0)
+                {
+                    r = 1;
+                    s = -s;
+                }
+                else
+                    r = 0;
+                result = s + result;
+            }
+
+            if (r == 0)
+                return n1.Substring(0, l1 - min) + result;
+            else
+                return (SubtractLargeInt(n1.Substring(0, l1 - min), "1") + result).TrimStart('0');
+        }
+
 		internal static string MultiplyLargeInt(string n1, string n2)
 		{
 			if (n1 == "" || n2 == "")
@@ -167,6 +199,24 @@ namespace ProjectEuler
 			string n = MultiplyLargeInt(n1.Substring(0, l1 - 1), n2) + "0";
 			return AddLargeInt(m, n).TrimStart('0');
 		}
+
+        internal static bool GreaterThanLargeInt(string a, string b)
+        {
+            if (a.Length > b.Length)
+                return true;
+            if (a.Length < b.Length)
+                return false;
+            int i = 0;
+            while (i < a.Length)
+            {
+                if (a[i] < b[i])
+                    return false;
+                else if (a[i] > b[i])
+                    return true;
+                i++;
+            }
+            return false;
+        }
 
         internal static string GetTextFromFile(string fileName)
         {
