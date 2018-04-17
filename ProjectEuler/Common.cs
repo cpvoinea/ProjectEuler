@@ -183,10 +183,13 @@ namespace ProjectEuler
                 return false;
             int i = 0;
             while (i < a.Length)
+            {
                 if (a[i] < b[i])
                     return false;
                 else if (a[i] > b[i])
                     return true;
+                i++;
+            }
             return false;
         }
 
