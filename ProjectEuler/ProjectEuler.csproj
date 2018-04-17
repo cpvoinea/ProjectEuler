@@ -141,12 +141,10 @@
     <Compile Include="076-100\Problem082.cs" />
     <Compile Include="076-100\Problem087.cs" />
     <Compile Include="051-075\Problem075.cs" />
+    <Compile Include="076-100\Problem077.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="100+\Problem345.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\Problem082.txt">
