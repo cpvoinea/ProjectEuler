@@ -54,6 +54,31 @@ namespace ProjectEuler
             return bits;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="n">number to calculate Totient function for</param>
+        /// <param name="p">smalles prime factor to check against (initialize to 2)</param>
+        /// <param name="f">current totient value (initialize to n)</param>
+        /// <param name="isPrime">ciurul lui Eratorstene cu numerele prime ramase</param>
+        /// <returns></returns>
+        internal static int Totient(int n, int p, int f, BitArray isPrime)
+        {
+            if (n == 1)
+                return f;
+
+            if (isPrime[n])
+                return f / n * (n - 1);
+
+            while (!isPrime[p] || n % p > 0)
+                p++;
+
+            int m = n / p;
+            while (m % p == 0)
+                m /= p;
+            return Totient(m, p + 1, f / p * (p - 1), isPrime);
+        }
+
         internal static List<int> GetPrimeNumbersLowerThan(int limit)
         {
             var primes = GeneratePrimes(limit);
