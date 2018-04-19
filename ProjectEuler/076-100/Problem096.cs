@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace ProjectEuler
@@ -66,7 +67,7 @@ namespace ProjectEuler
         bool Solve(int[,] s, Dictionary<int, List<int>> candidates)
         {
             int max = 1;
-            while (max < 9)
+            while (max <= 9)
             {
                 int lastCount = 0;
                 int count = 0;
@@ -139,10 +140,23 @@ namespace ProjectEuler
                     }
 
                 if (Solve(s, candidates))
-                    sum += Sum(s);
+                {
+                    if (l == 0)
+                    {
+                        Console.WriteLine(lines[0]);
+                        for (int i = 0; i < 9; i++)
+                        {
+                            for (int j = 0; j < 9; j++)
+                                Console.Write(s[i, j] + " ");
+                            Console.WriteLine();
+                        }
+                    }
+                    else
+                        sum += Sum(s);
+                }
                 else
                 {
-                    int beta =1;
+                    int beta = 1;
                 }
 
                 l += 10;
