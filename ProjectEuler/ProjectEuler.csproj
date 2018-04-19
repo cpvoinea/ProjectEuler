@@ -146,6 +146,7 @@
     <Compile Include="076-100\Problem083.cs" />
     <Compile Include="076-100\Problem078.cs" />
     <Compile Include="076-100\Problem091.cs" />
+    <Compile Include="076-100\Problem096.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="100+\Problem345.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -155,6 +156,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Problem083.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Problem096.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Problem102.txt">
