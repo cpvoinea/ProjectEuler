@@ -64,11 +64,17 @@ namespace ProjectEuler
             }
         }
 
+        int m;
+        long cccc = 0;
+
         bool Solve(int[,] s, Dictionary<int, List<int>> candidates)
         {
             int max = 1;
             while (max <= 9)
             {
+                if (max > m)
+                    m = max;
+                cccc++;
                 int lastCount = 0;
                 int count = 0;
                 do
@@ -143,7 +149,7 @@ namespace ProjectEuler
                 {
                     if (l == 0)
                     {
-                        Console.WriteLine(lines[0]);
+                        Console.WriteLine("{0} {1} {2}", lines[0], m, cccc);
                         for (int i = 0; i < 9; i++)
                         {
                             for (int j = 0; j < 9; j++)
