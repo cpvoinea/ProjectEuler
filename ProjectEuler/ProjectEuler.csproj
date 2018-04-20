@@ -87,6 +87,7 @@
     <Compile Include="051-075\Problem065.cs" />
     <Compile Include="051-075\Problem066.cs" />
     <Compile Include="051-075\Problem068.cs" />
+    <Compile Include="076-100\Problem078.cs" />
     <Compile Include="Common.cs" />
     <Compile Include="IProblem.cs" />
     <Compile Include="001-025\Problem001.cs" />
