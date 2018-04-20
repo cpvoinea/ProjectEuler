@@ -1,5 +1,4 @@
-﻿
-namespace ProjectEuler
+﻿namespace ProjectEuler
 {
     class Problem058 : IProblem
     {

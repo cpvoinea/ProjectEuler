@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace ProjectEuler
+﻿namespace ProjectEuler
 {
     class Problem092 : IProblem
     {
