@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace ProjectEuler
 {
@@ -88,61 +89,75 @@ namespace ProjectEuler
             return result;
         }
 
-		internal static bool IsPrime(long n)
-		{
-			if (n == 1)
-				return false;
+        internal static bool IsPrime(long n)
+        {
+            if (n == 1)
+                return false;
 
-			double sqrt = Math.Sqrt(n);
-			for (long i = 2; i <= sqrt; i++)
-				if (n % i == 0)
-					return false;
-			return true;
-		}
+            double sqrt = Math.Sqrt(n);
+            for (long i = 2; i <= sqrt; i++)
+                if (n % i == 0)
+                    return false;
+            return true;
+        }
 
-		internal static bool IsPandigital(string n, int from = 1, int to = 9)
-		{
-			bool[] marked = new bool[to - from + 1];
-			foreach (char c in n)
-				if (c - 48 < from || c - 48 > to || marked[c - 48])
-					return false;
-				else
-					marked[c - 48] = true;
+        internal static bool IsPandigital(string n, int from = 1, int to = 9)
+        {
+            bool[] marked = new bool[to - from + 1];
+            foreach (char c in n)
+                if (c - 48 < from || c - 48 > to || marked[c - 48])
+                    return false;
+                else
+                    marked[c - 48] = true;
 
-			return true;
-		}
+            return true;
+        }
 
-		internal static bool IsPalindrome(string n)
-		{
-			int l = n.Length;
-			for (int i = 0; i < l / 2; i++)
-				if (n[i] != n[l - i - 1])
-					return false;
-			return true;
-		}
+        internal static bool IsAllPandigital(long n)
+        {
+            bool[] digits = new bool[9];
+            while (n > 0)
+            {
+                int d = (int)(n % 10);
+                if (d == 0 || digits[d - 1])
+                    return false;
+                digits[d - 1] = true;
+                n /= 10;
+            }
+            return digits.All(d => d);
+        }
 
-		internal static string AddLargeInt(string n1, string n2)
-		{
-			if (n1 == "" || n2 == "")
-				return n1 + n2;
+        internal static bool IsPalindrome(string n)
+        {
+            int l = n.Length;
+            for (int i = 0; i < l / 2; i++)
+                if (n[i] != n[l - i - 1])
+                    return false;
+            return true;
+        }
 
-			int l1 = n1.Length;
-			int l2 = n2.Length;
-			int min = l1 < l2 ? l1 : l2;
-			string result = "";
-			int r = 0;
-			for (int i = 0; i < min; i++)
-			{
-				int s = n1[l1 - i - 1] + n2[l2 - i - 1] - 96 + r;
-				result = (s % 10) + result;
-				r = s / 10;
-			}
+        internal static string AddLargeInt(string n1, string n2)
+        {
+            if (n1 == "" || n2 == "")
+                return n1 + n2;
 
-			if (l1 < l2)
-				return (AddLargeInt(n2.Substring(0, l2 - l1), r.ToString()) + result).TrimStart('0');
-			else
-				return (AddLargeInt(n1.Substring(0, l1 - l2), r.ToString()) + result).TrimStart('0');
-		}
+            int l1 = n1.Length;
+            int l2 = n2.Length;
+            int min = l1 < l2 ? l1 : l2;
+            string result = "";
+            int r = 0;
+            for (int i = 0; i < min; i++)
+            {
+                int s = n1[l1 - i - 1] + n2[l2 - i - 1] - 96 + r;
+                result = (s % 10) + result;
+                r = s / 10;
+            }
+
+            if (l1 < l2)
+                return (AddLargeInt(n2.Substring(0, l2 - l1), r.ToString()) + result).TrimStart('0');
+            else
+                return (AddLargeInt(n1.Substring(0, l1 - l2), r.ToString()) + result).TrimStart('0');
+        }
 
         internal static string SubtractLargeInt(string n1, string n2)
         {
@@ -176,28 +191,28 @@ namespace ProjectEuler
                 return (SubtractLargeInt(n1.Substring(0, l1 - min), "1") + result).TrimStart('0');
         }
 
-		internal static string MultiplyLargeInt(string n1, string n2)
-		{
-			if (n1 == "" || n2 == "")
-				return "0";
+        internal static string MultiplyLargeInt(string n1, string n2)
+        {
+            if (n1 == "" || n2 == "")
+                return "0";
 
-			int l1 = n1.Length;
-			int l2 = n2.Length;
+            int l1 = n1.Length;
+            int l2 = n2.Length;
 
-			int d = n1[l1 - 1] - 48;
-			string m = "";
-			int r = 0;
-			for (int i = 0; i < l2; i++)
-			{
-				int s = (n2[l2 - i - 1] - 48) * d + r;
-				m = (s % 10) + m;
-				r = s / 10;
-			}
-			m = r + m;
+            int d = n1[l1 - 1] - 48;
+            string m = "";
+            int r = 0;
+            for (int i = 0; i < l2; i++)
+            {
+                int s = (n2[l2 - i - 1] - 48) * d + r;
+                m = (s % 10) + m;
+                r = s / 10;
+            }
+            m = r + m;
 
-			string n = MultiplyLargeInt(n1.Substring(0, l1 - 1), n2) + "0";
-			return AddLargeInt(m, n).TrimStart('0');
-		}
+            string n = MultiplyLargeInt(n1.Substring(0, l1 - 1), n2) + "0";
+            return AddLargeInt(m, n).TrimStart('0');
+        }
 
         internal static bool GreaterThanLargeInt(string a, string b)
         {
@@ -222,5 +237,5 @@ namespace ProjectEuler
             using (StreamReader sr = new StreamReader(fileName))
                 return sr.ReadToEnd();
         }
-	}
+    }
 }
