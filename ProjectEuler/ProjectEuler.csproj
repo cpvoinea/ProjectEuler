@@ -159,6 +159,9 @@
     <Compile Include="076-100\Problem094.cs" />
     <Compile Include="076-100\Problem098.cs" />
     <Compile Include="100+\Problem104.cs" />
+    <Compile Include="100+\Problem124.cs" />
+    <Compile Include="100+\Problem120.cs" />
+    <Compile Include="100+\Problem125.cs" />
     <Compile Include="Recent\Problem624.cs" />
     <Compile Include="Recent\Problem625.cs" />
     <Compile Include="Program.cs" />

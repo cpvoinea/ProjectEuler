@@ -130,7 +130,7 @@ namespace ProjectEuler
         internal static bool IsPalindrome(string n)
         {
             int l = n.Length;
-            for (int i = 0; i < l / 2; i++)
+            for (int i = 0; i <= l / 2; i++)
                 if (n[i] != n[l - i - 1])
                     return false;
             return true;
