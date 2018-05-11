@@ -15,7 +15,6 @@ namespace ProjectEuler
 
             int i = 1;
             long sum = 0;
-            int m = 0;
             HashSet<int> p = new HashSet<int>();
             while (i <= limit - 2)
             {
