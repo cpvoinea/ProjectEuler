@@ -1,4 +1,6 @@
-﻿namespace ProjectEuler
+﻿using System.Text;
+
+namespace ProjectEuler
 {
     class Problem627 : IProblem
     {
@@ -7,16 +9,9 @@
         const int n = 2;
         const int mod = 1000000007;
 
-        int GetMaxSlots(int[] powers, int r2, int r4, int r30)
+        long MaxCount3(int[] powers)
         {
-            int p2 = powers[0], p3 = powers[1], p5 = powers[2];
-
-            return r30;
-        }
-
-        int GetMax(int i, int[] powers)
-        {
-            int r2 = 0, r3 = 0, r4 = 0, r6 = 0, r10 = 0, r30 = n;
+            int r4 = 0, r6 = 0, r30 = n;
 
             for (int j = primes.Length - 1; j > 2; j--)
                 if (powers[j] > 0)
@@ -26,16 +21,9 @@
                     if (r30 < 0)
                         return 0;
 
-                    if (j < 6)
-                    {
-                        r2 += p1;
-                        if (j == 3)
-                            r4 += p1;
-                    }
+                    if (j == 3)
+                        r4 += p1;
                 }
-
-            if (i > 2)
-                return GetMaxSlots(powers, r2, r4, r30);
 
             //5
             int p = powers[2];
@@ -55,6 +43,49 @@
                 }
             }
 
+            return r4 + r6 + r30 * 3 + 1;
+        }
+
+        long MaxCount2(int[] powers)
+        {
+            int r2 = 0, r3 = 0, r4 = 0, r6 = 0, r10 = 0, r30 = n;
+
+            for (int j = primes.Length - 1; j > 2; j--)
+                if (powers[j] > 0)
+                {
+                    int p1 = powers[j];
+                    r30 -= p1;
+                    if (r30 < 0)
+                        return 0;
+
+                    if (j < 6)
+                    {
+                        r2 += p1;
+                        if (j == 3)
+                            r4 += p1;
+                    }
+                }
+
+            //5
+            int p = powers[2];
+            if (p > 0)
+            {
+                if (p > r30)
+                {
+                    r6 = 2 * r30 - p;
+                    if (r6 < 0)
+                        return 0;
+                    r30 = 0;
+                    p = 0;
+                }
+                else
+                {
+                    r30 -= p;
+                    r6 = p;
+                    p = 0;
+                }
+            }
+
             //3
             p = powers[1];
             if (p > 0 && r6 > 0)
@@ -63,6 +94,7 @@
                 {
                     r6 -= p;
                     r2 += p;
+                    p = 0;
                 }
                 else
                 {
@@ -77,6 +109,7 @@
                 {
                     r30 -= p;
                     r10 += p;
+                    p = 0;
                 }
                 else
                 {
@@ -103,77 +136,49 @@
                 if (p > r4)
                     return 0;
                 r4 -= p;
+                p = 0;
             }
 
             return r2 + r3 + r4 * 2 + r6 * 2 + r10 * 3 + r30 * 4 + 1;
         }
 
-        static int[] Copy(int[] array)
+        long MaxCount(int i, int[] powers)
         {
-            int[] result = new int[array.Length];
-            for (int i = 0; i < array.Length; i++)
-                result[i] = array[i];
-            return result;
-        }
-
-        int Count(int i, int emptySlots, int[] remainders)
-        {
-            int c = 0;
-            int p = primes[i];
-            int x = p;
-            while (x <= m)
+            long max = 0;
+            if (i >= 2)
             {
-                c++;
-                x *= p;
+                int s = n;
+                for (int j = i + 1; j < powers.Length; j++)
+                    s -= powers[j];
+                max = s * (i == 2 ? 2 : 1) + 1;
             }
-            c *= emptySlots;
-            for (int j = p; j < remainders.Length; j++)
-            {
-                int r = remainders[j];
-                if (r > 0)
-                {
-                    x = p;
-                    while (x <= j)
-                    {
-                        c += r;
-                        x *= p;
-                    }
-                }
-            }
-
-            return c;
-        }
-
-        int MaxCount(int x, int[] powers)
-        {
-            int max = 0;
-            int emptySlots = n;
-            int[] remainders = new int[16];
-            int i = powers.Length;
-            while(--i >= 0)
-            {
-                while (powers[i] > 0)
-                {
-                    powers[i]--;
-                    if (i > 2)
-                    {
-                        emptySlots--;
-                        if (i > 3)
-                            remainders[2]++;
-                        else
-                            remainders[4]++;
-                    }
-
-
-                }
-            }
+            else if (i == 1)
+                max = MaxCount3(powers);
+            else
+                max = MaxCount2(powers);
 
             return max;
         }
 
+        string GetKey(int x, int[] powers)
+        {
+            StringBuilder sb = new StringBuilder();
+            if (x < 10)
+                sb.Append("0");
+            sb.Append(x);
+            foreach(int p in powers)
+            {
+                string s = p.ToString();
+                for (int i = 0; i < 5 - s.Length; i++)
+                    sb.Append("0");
+                sb.Append(s);
+            }
+            return sb.ToString();
+        }
+
         long Count(int i, int[] powers)
         {
-            int max = GetMax(i, powers);
+            long max = MaxCount(i, powers);
             if (i == 0)
                 return max;
 
@@ -181,9 +186,11 @@
             for (int j = 0; j < max; j++)
             {
                 powers[i] = j;
-                c = (c + Count(i - 1, powers)) % mod;
+                long x = Count(i - 1, powers);
+                c = (c + x) % mod;
             }
 
+            powers[i] = 0;
             return c;
         }
 
