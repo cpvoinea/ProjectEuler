@@ -1,202 +1,143 @@
-﻿using System.Text;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Numerics;
 
 namespace ProjectEuler
 {
     class Problem627 : IProblem
     {
-        readonly int[] primes = { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29 };
-        const int m = 30;
-        const int n = 2;
         const int mod = 1000000007;
+        const int b = 50000;
 
-        long MaxCount3(int[] powers)
+        // 3
+        Dictionary<BigInteger, long> ce1 = new Dictionary<BigInteger, long>();
+        long Count1Exact(int p, int n, int r10, int r6, int r4, int r3, int r2)
         {
-            int r4 = 0, r6 = 0, r30 = n;
-
-            for (int j = primes.Length - 1; j > 2; j--)
-                if (powers[j] > 0)
-                {
-                    int p1 = powers[j];
-                    r30 -= p1;
-                    if (r30 < 0)
-                        return 0;
-
-                    if (j == 3)
-                        r4 += p1;
-                }
-
-            //5
-            int p = powers[2];
-            if (p > 0)
+            if (n < 0 || r10 < 0 || r6 < 0 || r4 < 0 || r3 < 0 || r2 < 0)
+                return 0;
+            BigInteger k = n * b + p;
+            k = ((((k * b + r10) * b + r6) * b + r4) * b + r3) * b + r2;
+            if (ce1.ContainsKey(k))
+                return ce1[k];
+            if (p == 0)
             {
-                if (p > r30)
-                {
-                    r6 = 2 * r30 - p;
-                    if (r6 < 0)
-                        return 0;
-                    r30 = 0;
-                }
-                else
-                {
-                    r30 -= p;
-                    r6 = p;
-                }
-            }
-
-            return r4 + r6 + r30 * 3 + 1;
-        }
-
-        long MaxCount2(int[] powers)
-        {
-            int r2 = 0, r3 = 0, r4 = 0, r6 = 0, r10 = 0, r30 = n;
-
-            for (int j = primes.Length - 1; j > 2; j--)
-                if (powers[j] > 0)
-                {
-                    int p1 = powers[j];
-                    r30 -= p1;
-                    if (r30 < 0)
-                        return 0;
-
-                    if (j < 6)
-                    {
-                        r2 += p1;
-                        if (j == 3)
-                            r4 += p1;
-                    }
-                }
-
-            //5
-            int p = powers[2];
-            if (p > 0)
-            {
-                if (p > r30)
-                {
-                    r6 = 2 * r30 - p;
-                    if (r6 < 0)
-                        return 0;
-                    r30 = 0;
-                    p = 0;
-                }
-                else
-                {
-                    r30 -= p;
-                    r6 = p;
-                    p = 0;
-                }
-            }
-
-            //3
-            p = powers[1];
-            if (p > 0 && r6 > 0)
-            {
-                if (r6 >= p)
-                {
-                    r6 -= p;
-                    r2 += p;
-                    p = 0;
-                }
-                else
-                {
-                    p -= r6;
-                    r2 += r6;
-                    r6 = 0;
-                }
-            }
-            if (p > 0 && r30 > 0)
-            {
-                if (r30 >= p)
-                {
-                    r30 -= p;
-                    r10 += p;
-                    p = 0;
-                }
-                else
-                {
-                    p -= r30;
-                    r10 += r30;
-                    r30 = 0;
-                }
-            }
-            if (p > 0 && r10 > 0)
-            {
-                while (p > 0 && r10 > 0)
-                {
-                    p--;
-                    r10--;
-                    r3++;
-                    if (p == 0)
-                        break;
-                    p--;
-                    r3--;
-                }
-            }
-            if (p > 0 && r4 > 0)
-            {
-                if (p > r4)
-                    return 0;
-                r4 -= p;
-                p = 0;
-            }
-
-            return r2 + r3 + r4 * 2 + r6 * 2 + r10 * 3 + r30 * 4 + 1;
-        }
-
-        long MaxCount(int i, int[] powers)
-        {
-            long max = 0;
-            if (i >= 2)
-            {
-                int s = n;
-                for (int j = i + 1; j < powers.Length; j++)
-                    s -= powers[j];
-                max = s * (i == 2 ? 2 : 1) + 1;
-            }
-            else if (i == 1)
-                max = MaxCount3(powers);
-            else
-                max = MaxCount2(powers);
-
-            return max;
-        }
-
-        string GetKey(int x, int[] powers)
-        {
-            StringBuilder sb = new StringBuilder();
-            if (x < 10)
-                sb.Append("0");
-            sb.Append(x);
-            foreach(int p in powers)
-            {
-                string s = p.ToString();
-                for (int i = 0; i < 5 - s.Length; i++)
-                    sb.Append("0");
-                sb.Append(s);
-            }
-            return sb.ToString();
-        }
-
-        long Count(int i, int[] powers)
-        {
-            long max = MaxCount(i, powers);
-            if (i == 0)
+                long max = n * 4 + r10 * 3 + r6 * 2 + r4 * 2 + r3 + r2 + 1;
+                ce1[k] = max;
                 return max;
+            }
+
+            long c1 = Count1Exact(p - 1, n - 1, r10 + 1, r6, r4, r3, r2);
+            long c2 = Count1Exact(p - 1, n, r10 - 1, r6, r4, r3 + 1, r2);
+            long c3 = Count1Exact(p - 1, n, r10, r6 - 1, r4, r3, r2 + 1);
+            long c4 = Count1Exact(p - 1, n, r10, r6, r4 - 1, r3, r2);
+            long c5 = Count1Exact(p - 1, n, r10, r6, r4, r3 - 1, r2);
+
+
+            long c = new[] { c1, c2, c3, c4, c5 }.Max();
+            ce1[k] = c;
+            return c;
+        }
+
+        Dictionary<BigInteger, long> ca1 = new Dictionary<BigInteger, long>();
+        long Count1(int n, int r6, int r4, int r2)
+        {
+            BigInteger k = n;
+            k = ((k * b + r6) * b + r4) * b + r2;
+            if (ca1.ContainsKey(k))
+                return ca1[k];
 
             long c = 0;
-            for (int j = 0; j < max; j++)
-            {
-                powers[i] = j;
-                long x = Count(i - 1, powers);
-                c = (c + x) % mod;
-            }
+            int max = 3 * n + r6 + r4;
+            for (int i = 0; i <= max; i++)
+                c = (c + Count1Exact(i, n, 0, r6, r4, 0, r2));
 
-            powers[i] = 0;
+            ca1[k] = c;
+            return c;
+        }
+
+        // 5
+        Dictionary<BigInteger, long> ce2 = new Dictionary<BigInteger, long>();
+        long Count2Exact(int p, int n, int r6, int r4, int r2)
+        {
+            if (n < 0 || r6 < 0 || r4 < 0 || r2 < 0)
+                return 0;
+            if (p == 0)
+                return Count1(n, r6, r4, r2);
+            BigInteger k = n * b + p;
+            k = ((k * b + r6) * b + r4) * b + r2;
+            if (ce2.ContainsKey(k))
+                return ce2[k];
+
+            long c1 = Count2Exact(p - 1, n - 1, r6 + 1, r4, r2);
+            long c2 = Count2Exact(p - 1, n, r6 - 1, r4, r2);
+            long c = c1 > c2 ? c1 : c2;
+
+            ce2[k] = c;
+            return c;
+        }
+
+        Dictionary<BigInteger, long> ca2 = new Dictionary<BigInteger, long>();
+        long Count2(int n, int r4, int r2)
+        {
+            BigInteger k = n;
+            k = (k * b + r4) * b + r2;
+            if (ca2.ContainsKey(k))
+                return ca2[k];
+
+            long c = 0;
+            int max = 2 * n;
+            for (int i = 0; i <= max; i++)
+                c = (c + Count2Exact(i, n, 0, r4, r2)) % mod;
+
+            ca2[k] = c;
+            return c;
+        }
+
+        // 7
+        Dictionary<long, long> ca3 = new Dictionary<long, long>();
+        long Count3(int n, int r2)
+        {
+            long k = n * b + r2;
+            if (ca3.ContainsKey(k))
+                return ca3[n];
+
+            long c = 0;
+            for (int i = 0; i <= n; i++)
+                c = (c + Count2(n - i, i, r2)) % mod;
+
+            ca3.Add(k, c);
+            return c;
+        }
+
+        // 11, 13
+        Dictionary<int, long> ca4 = new Dictionary<int, long>();
+        long Count4(int n)
+        {
+            if (ca4.ContainsKey(n))
+                return ca4[n];
+
+            long c = 0;
+            for (int i = 0; i <= n; i++)
+                c = (c + Count3(n - i, i) * (i + 1)) % mod;
+
+            ca4.Add(n, c);
+            return c;
+        }
+
+        // 17, 19, 23, 29
+        long Count(int n)
+        {
+            long c = 0;
+            for (int i = 0, k = 1; i <= n; i++, k *= (i + 3) / i)
+                c = (c + Count4(n - i) * k + 1) % mod;
+
             return c;
         }
 
         public string GetResult()
         {
-            return (Count(primes.Length - 1, new int[primes.Length]) % mod).ToString();
+            long c = Count(10001);
+            return c.ToString();
         }
     }
 }
