@@ -6,37 +6,55 @@ namespace ProjectEuler
     {
         public string GetResult()
         {
-            HashSet<int> num = new HashSet<int>();
-            for(int k = 2; k <= 12000; k++)
+            const int limit = 12000;
+            int[] min = new int[limit + 1];
+            int[] factors = new int[] { 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2 };
+
+            int count = 13;
+            while (count > 0)
             {
-                int min = int.MaxValue;
-                int b = 2;
-                while (b <= k)
+                int p = 1;
+                for (int i = 0; i <= count; i++)
+                    p *= factors[i];
+                if (count == 0 && p > 2 * limit)
+                    break;
+                if (p > 2 * limit)
                 {
-                    int p = 1;
-                    int e = b;
-                    while (e <= k + p * (b - 1) && p <= k)
+                    p /= factors[count] * factors[count - 1];
+                    factors[count - 1]++;
+                    factors[count] = factors[count - 1];
+                    p *= factors[count] * factors[count - 1];
+                    if (p > 2 * limit)
                     {
-                        if ((k + p * (b - 1) - 1) % (e - 1) == 0)
-                        {
-                            int s = e * (k + p * (b - 1) - 1) / (e - 1);
-                            if (s < min)
-                                min = s;
-                        }
-                        p++;
-                        e *= b;
+                        p /= factors[count] * factors[count - 1];
+                        factors[count] = 0;
+                        count--;
+                        factors[count] = 2;
+                        p *= factors[count];
                     }
-                    b++;
                 }
 
-                if (!num.Contains(min))
-                    num.Add(min);
+                int s = 0;
+                for (int i = 0; i <= count; i++)
+                    s += factors[i];
+                int k = p - s + count + 1;
+                if (k >= 2 && k <= limit && (min[k] == 0 || p < min[k]))
+                    min[k] = p;
+
+                factors[count]++;
             }
 
+            HashSet<int> vals = new HashSet<int>();
             long sum = 0;
-            foreach (int n in num)
-                sum += n;
-
+            for (int i = 2; i <= limit; i++)
+            {
+                int n = min[i];
+                if (!vals.Contains(n))
+                {
+                    sum += n;
+                    vals.Add(n);
+                }
+            }
             return sum.ToString();
         }
     }
