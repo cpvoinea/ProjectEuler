@@ -79,6 +79,11 @@ namespace ProjectEuler
             return Totient(m, p + 1, f / p * (p - 1), isPrime);
         }
 
+        /// <summary>
+        /// Excluding limit
+        /// </summary>
+        /// <param name="limit"></param>
+        /// <returns></returns>
         internal static List<int> GetPrimeNumbersLowerThan(int limit)
         {
             var primes = GeneratePrimes(limit);
