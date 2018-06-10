@@ -170,6 +170,7 @@
     <Compile Include="401+\Problem627.cs" />
     <Compile Include="401+\Problem624.cs" />
     <Compile Include="401+\Problem625.cs" />
+    <Compile Include="101-400\Problem121.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="101-400\Problem345.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
