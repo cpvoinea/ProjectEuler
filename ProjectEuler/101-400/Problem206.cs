@@ -6,7 +6,7 @@
         {
             int i = 8;
             long m = n;
-            while(i > 1)
+            while (i > 1)
             {
                 if (m % 10 != i)
                     return false;
@@ -18,7 +18,7 @@
 
         public string GetResult()
         {
-            for(int n = 10000001; n < 14000000; n++)
+            for (int n = 10000001; n < 14000000; n++)
             {
                 long m = n * 10 + 3;
                 if (Check(m * m / 100))

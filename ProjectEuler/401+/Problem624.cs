@@ -7,7 +7,7 @@ namespace ProjectEuler
     {
         public string GetResult()
         {
-            const int div = 1000000009;
+            // const int div = 1000000009;
             const long N = 1000000000000000000;
             var primes = Common.GetPrimeNumbersLowerThan(10000000);
             // P(n) = A(n) / B(n)

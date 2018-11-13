@@ -160,10 +160,6 @@ namespace ProjectEuler
                     else
                         sum += Sum(s);
                 }
-                else
-                {
-                    int beta = 1;
-                }
 
                 l += 10;
             }

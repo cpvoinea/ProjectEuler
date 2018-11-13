@@ -11,7 +11,7 @@ namespace ProjectEuler
             int m = 1;
             double s = 1;
             double e = 2;
-            while(m < limit)
+            while (m < limit)
             {
                 double d = (e - 1) / e;
                 if (e == 0)

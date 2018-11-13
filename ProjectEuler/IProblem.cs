@@ -1,7 +1,7 @@
 ﻿namespace ProjectEuler
 {
-	public interface IProblem
-	{
-		string GetResult();
-	}
+    public interface IProblem
+    {
+        string GetResult();
+    }
 }

@@ -64,7 +64,7 @@ namespace ProjectEuler
         public string GetResult()
         {
             int count = 0;
-            for(int i = 2; i <= 10000; i++)
+            for (int i = 2; i <= 10000; i++)
             {
                 var r = new RootForm(i);
                 if (r.IsOddPeriod)

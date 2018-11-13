@@ -19,7 +19,7 @@
         int Cost(int n) // or
         {
             int s = 0;
-            while(n > 0)
+            while (n > 0)
             {
                 s += cost[n % 10];
                 n /= 10;
@@ -85,7 +85,7 @@
                         r = Root(m);
                     }
                     sam += 2 * Cost(r);
-                    max += CostDif(m, r) + Cost (r);
+                    max += CostDif(m, r) + Cost(r);
 
                     s += sam - max;
                 }

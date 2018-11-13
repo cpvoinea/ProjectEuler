@@ -40,7 +40,7 @@ namespace ProjectEuler
 
             string key = "god";
             int sum = 0;
-            for(int i = 0; i < cipher.Length; i++)
+            for (int i = 0; i < cipher.Length; i++)
             {
                 sum += (byte)key[i % 3] ^ cipher[i];
             }

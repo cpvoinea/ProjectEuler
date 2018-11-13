@@ -19,9 +19,9 @@ namespace ProjectEuler
         {
             int[][] pairs = File.ReadAllLines("Resources\\Problem099.txt").Select(s => s.Split(',').Select(p => int.Parse(p)).ToArray()).ToArray();
             int maxi = 0;
-            for(int i = 0; i < pairs.Length; i++)
+            for (int i = 0; i < pairs.Length; i++)
             {
-                if(GreaterThan(pairs[i][0], pairs[i][1], pairs[maxi][0], pairs[maxi][1]))
+                if (GreaterThan(pairs[i][0], pairs[i][1], pairs[maxi][0], pairs[maxi][1]))
                     maxi = i;
             }
             return (maxi + 1).ToString();

@@ -2,20 +2,18 @@
 
 namespace ProjectEuler
 {
-	class Program
-	{
-		/// <summary>
-		/// http://projecteuler.net/problems
-		/// </summary>
-		/// <param name="args"></param>
-		static void Main(string[] args)
-		{
-			IProblem p;
+    class Program
+    {
+        /// <summary>
+        /// http://projecteuler.net/problems
+        /// </summary>
+        /// <param name="args"></param>
+        static void Main(string[] args)
+        {
+            IProblem p;
 
-			p = new Problem293();
-			Console.WriteLine("Result = " + p.GetResult());
-		
-			Console.ReadKey();
-		}
-	}
+            p = new Problem100();
+            Console.WriteLine("Result = " + p.GetResult());
+        }
+    }
 }

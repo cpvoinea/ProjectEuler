@@ -40,7 +40,7 @@ namespace ProjectEuler
             }
 
             long s = 1;
-            foreach(int p in powers.Keys)
+            foreach (int p in powers.Keys)
             {
                 for (int i = 0; i < powers[p]; i++)
                     s = (s * p) % m;

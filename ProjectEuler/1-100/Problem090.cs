@@ -33,7 +33,7 @@ namespace ProjectEuler
 
         bool IsValid(int[] l, int[] r)
         {
-            for(int i = 1; i < 10; i++)
+            for (int i = 1; i < 10; i++)
             {
                 int n = i * i;
                 int dl = n / 10;

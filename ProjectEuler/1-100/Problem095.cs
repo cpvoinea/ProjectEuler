@@ -13,7 +13,7 @@ namespace ProjectEuler
             for (int n = 1; n < limit; n++)
                 sums.Add(n, Common.GetSumOfDivisorsOf(n));
 
-            for(int n = 2; n < limit; n++)
+            for (int n = 2; n < limit; n++)
             {
                 HashSet<int> chain = new HashSet<int> { n };
                 int s = sums[n];

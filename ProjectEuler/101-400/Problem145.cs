@@ -10,7 +10,7 @@
             int l = sn.Length;
             int i = 0;
             int r = 0;
-            while(i < l)
+            while (i < l)
             {
                 int s = sn[l - 1 - i] + sn[i] - 96 + r;
                 if ((s % 10) % 2 == 0)

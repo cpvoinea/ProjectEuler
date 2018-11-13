@@ -9,7 +9,7 @@ namespace ProjectEuler
         Fraction Calculate(Stack<double> s)
         {
             Fraction result = new Fraction { H = "0", K = "1" };
-            foreach(double i in s)
+            foreach (double i in s)
             {
                 if (result.H == "0")
                     result = new Fraction { H = i.ToString(), K = "1" };

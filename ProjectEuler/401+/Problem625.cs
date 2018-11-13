@@ -59,7 +59,7 @@ namespace ProjectEuler
 
             while (i <= limit)
             {
-                s+= Totient(i, 2, i, primes);
+                s += Totient(i, 2, i, primes);
                 i++;
             }
             sum = (sum + s) % div;

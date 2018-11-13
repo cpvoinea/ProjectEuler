@@ -38,7 +38,7 @@ namespace ProjectEuler
             List<int> candidates = new List<int>();
             AddCandidates(candidates, 1, 0, maxPrime, primes.Where(x => x < maxPrime).ToArray());
             candidates.Sort();
-            foreach(int c in candidates)
+            foreach (int c in candidates)
             {
                 double m = f * c * 94744.0 / 15499 / (n * c - 1);
                 if (m < 1)

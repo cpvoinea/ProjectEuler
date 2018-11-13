@@ -14,7 +14,7 @@
                     continue;
                 n = n / 7;
                 double x = n * 1.0 / d;
-                if(x > max)
+                if (x > max)
                 {
                     max = x;
                     nmax = n;
@@ -27,7 +27,7 @@
             int df = dmax;
             while (i < nmax)
             {
-                while(nf % i == 0 && df % i == 0)
+                while (nf % i == 0 && df % i == 0)
                 {
                     nf /= i;
                     df /= i;

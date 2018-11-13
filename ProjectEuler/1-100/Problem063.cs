@@ -7,7 +7,7 @@
             int count = 0;
             int d = 1;
             int first = 1;
-            while(first < 10)
+            while (first < 10)
             {
                 for (int i = first; i < 10; i++)
                 {

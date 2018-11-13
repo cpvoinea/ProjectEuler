@@ -29,9 +29,9 @@ namespace ProjectEuler
         public string GetResult()
         {
             HashSet<int> pfn = new HashSet<int>();
-            for(int n = 2; n <= limit; n += 2)
+            for (int n = 2; n <= limit; n += 2)
             {
-                if(IsAdmissable(n))
+                if (IsAdmissable(n))
                 {
                     int m = 3;
                     while (!isPrime[n + m])

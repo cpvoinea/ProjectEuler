@@ -14,7 +14,7 @@ namespace ProjectEuler
         {
             const int limit = 166666666;
             long sum = 0;
-            for(int k = 1; k <= limit; k++)
+            for (int k = 1; k <= limit; k++)
             {
                 long p = 3 * k + 1;
                 if (IsPP((k + 1) * p))

@@ -26,7 +26,7 @@ namespace ProjectEuler
 
         public string GetResult()
         {
-            using(StreamReader sr = new StreamReader("Resources\\Problem079.txt"))
+            using (StreamReader sr = new StreamReader("Resources\\Problem079.txt"))
             {
                 while (!sr.EndOfStream)
                 {

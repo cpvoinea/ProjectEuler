@@ -4,8 +4,8 @@ using System.IO;
 
 namespace ProjectEuler
 {
-	class Problem042 : IProblem
-	{
+    class Problem042 : IProblem
+    {
         public string GetResult()
         {
             int limit = 33;
@@ -25,5 +25,5 @@ namespace ProjectEuler
 
             return count.ToString();
         }
-	}
+    }
 }

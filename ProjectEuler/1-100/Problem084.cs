@@ -94,7 +94,7 @@ namespace ProjectEuler
             Shuffle(ch, 10);
             int ic = 0, ih = 0;
             int cons = 0;
-            for(int i = 0; i < limit; i++)
+            for (int i = 0; i < limit; i++)
             {
                 int d1 = r.Next(sides) + 1;
                 int d2 = r.Next(sides) + 1;
@@ -141,7 +141,7 @@ namespace ProjectEuler
                             case 9: current = ((current + 5) / 10 * 10 + 5) % count; break;
                             case 10: current = ((current + 5) / 10 * 10 + 5) % count; break;
                         }
-                        if(current == 33)
+                        if (current == 33)
                         {
                             switch (cc[ic++])
                             {

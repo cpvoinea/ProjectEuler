@@ -15,7 +15,7 @@ namespace ProjectEuler
                 long m = n * n + n + 1;
                 if (m <= limit && !hs.Contains(m))
                     hs.Add(m);
-                while(m <= limit / n)
+                while (m <= limit / n)
                 {
                     m = m * n + 1;
                     if (m <= limit && !hs.Contains(m))

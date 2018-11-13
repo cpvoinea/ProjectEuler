@@ -11,8 +11,8 @@ namespace ProjectEuler
             int primeLimit = (int)Math.Sqrt(limit);
             List<int> primes = Common.GetPrimeNumbersLowerThan(limit / 2 + 1);
             long sum = 0;
-            for(int i = 0; primes[i] <= primeLimit; i++)
-                for(int j = i + 1; j < primes.Count; j++)
+            for (int i = 0; primes[i] <= primeLimit; i++)
+                for (int j = i + 1; j < primes.Count; j++)
                 {
                     int p = primes[i];
                     int q = primes[j];

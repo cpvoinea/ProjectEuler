@@ -20,7 +20,8 @@ namespace ProjectEuler
         {
             BitArray b = new BitArray(11);
             int s = 55;
-            foreach (int x in c) {
+            foreach (int x in c)
+            {
                 b[x] = true;
                 s += x;
             }
@@ -50,7 +51,7 @@ namespace ProjectEuler
                     return;
 
             StringBuilder r = new StringBuilder();
-            for(int i = 0; i < c.Length; i++)
+            for (int i = 0; i < c.Length; i++)
             {
                 int x = c[(i + mini) % c.Length];
                 int y = c[(i + 1 + mini) % c.Length];

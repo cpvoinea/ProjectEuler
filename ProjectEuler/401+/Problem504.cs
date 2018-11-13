@@ -31,7 +31,7 @@ namespace ProjectEuler
         {
             const int l = 100;
             Dictionary<int, bool> squares = new Dictionary<int, bool>();
-            for (int i = 1; i <= (l+1)*(l+1); i++)
+            for (int i = 1; i <= (l + 1) * (l + 1); i++)
                 squares.Add(i * i, true);
             int count = 0;
             for (int a = 1; a <= l; a++)
