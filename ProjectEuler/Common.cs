@@ -58,7 +58,7 @@ namespace ProjectEuler
         /// 
         /// </summary>
         /// <param name="n">number to calculate Totient function for</param>
-        /// <param name="p">smalles prime factor to check against (initialize to 2)</param>
+        /// <param name="p">smallest prime factor to check against (initialize to 2)</param>
         /// <param name="f">current totient value (initialize to n)</param>
         /// <param name="isPrime">ciurul lui Eratorstene cu numerele prime ramase</param>
         /// <returns></returns>
