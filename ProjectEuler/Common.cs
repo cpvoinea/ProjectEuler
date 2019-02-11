@@ -54,6 +54,48 @@ namespace ProjectEuler
             return bits;
         }
 
+        internal static BitArray[] GeneratePrimes(long limit, int intervals)
+        {
+            BitArray[] bits = new BitArray[intervals];
+            int oneLimit = (int)(limit / intervals);
+            for (int i = 0; i < intervals; i++)
+                bits[i] = new BitArray(oneLimit, false);
+            bits[0][0] = false;
+            bits[0][1] = false;
+            for (long i = 0; i * i <= limit; i++)
+            {
+                int k = (int)(i / oneLimit);
+                int j = (int)(i % oneLimit);
+                if (!bits[k][j])
+                    continue;
+                for (long n = i * i; n <= limit; n += i)
+                {
+                    k = (int)(n / oneLimit);
+                    j = (int)(n % oneLimit);
+                    bits[k][j] = false;
+                }
+            }
+
+            return bits;
+        }
+
+        internal static long Totient(long n, long p, long f, BitArray[] isPrime, int oneLimit)
+        {
+            if (n == 1)
+                return f;
+
+            if (isPrime[(int)(n / oneLimit)][(int)(n % oneLimit)])
+                return f / n * (n - 1);
+
+            while (!isPrime[(int)(p / oneLimit)][(int)(p % oneLimit)] || n % p > 0)
+                p++;
+
+            long m = n / p;
+            while (m % p == 0)
+                m /= p;
+            return Totient(m, p + 1, f / p * (p - 1), isPrime, oneLimit);
+        }
+
         /// <summary>
         /// 
         /// </summary>
