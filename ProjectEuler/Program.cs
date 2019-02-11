@@ -12,7 +12,7 @@ namespace ProjectEuler
         {
             IProblem p;
 
-            p = new Problem407();
+            p = new Problem429();
             Console.WriteLine("Result = " + p.GetResult());
         }
     }
