@@ -10,10 +10,8 @@ namespace ProjectEuler
         /// <param name="args"></param>
         static void Main(string[] args)
         {
-            IProblem p;
-
-            p = new Problem650();
-            Console.WriteLine("Result = " + p.GetResult());
+            SpecialNumbers.Print(SpecialNumbers.Triangle(698));
+            //Console.WriteLine("Result = " + new Problem625().GetResult());
         }
     }
 }
