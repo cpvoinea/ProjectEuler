@@ -4,19 +4,20 @@ namespace ProjectEuler
 {
     class Problem650 : IProblem
     {
-        const int limit = 100;
+        const int limit = 20000;
         const int div = 1_000_000_007;
+        static readonly List<int> primes = Common.GetPrimeNumbersLowerThan(limit + 100);
 
-        static int[][] FactorialFactors(int limit, int primeCount, List<int> primes, ref int[][] ordinalFactors)
+        static int[][] FactorialFactors(int limit, ref int[][] ordinalFactors)
         {
             int[][] result = new int[limit + 1][];
-            result[1] = new int[primeCount + 1];
-            ordinalFactors[1] = new int[primeCount + 1];
+            result[1] = new int[primes.Count];
+            ordinalFactors[1] = new int[primes.Count];
 
-            int[] factors = new int[primeCount + 1];
+            int[] factors = new int[primes.Count];
             for (int i = 2; i <= limit; i++)
             {
-                ordinalFactors[i] = new int[primeCount + 1];
+                ordinalFactors[i] = new int[primes.Count];
                 int n = i;
                 int ip = 0;
                 while (n > 1 && primes[ip] <= n)
@@ -33,21 +34,21 @@ namespace ProjectEuler
                         factors[ip] += c;
                         ordinalFactors[i][ip] = c;
                     }
-                    if (ip < primeCount - 1)
+                    if (ip < primes.Count - 1)
                         ip++;
                 }
 
-                result[i] = new int[primeCount + 1];
+                result[i] = new int[primes.Count];
                 factors.CopyTo(result[i], 0);
             }
 
             return result;
         }
 
-        long D(int[] factors, List<int> primes, int primeCount)
+        long DivisorSum(int[] factors)
         {
             long result = 1;
-            for (int ip = 0; ip <= primeCount; ip++)
+            for (int ip = 0; ip < primes.Count; ip++)
                 if (factors[ip] > 0)
                 {
                     int p = primes[ip];
@@ -66,19 +67,17 @@ namespace ProjectEuler
 
         public string GetResult()
         {
-            List<int> primes = Common.GetPrimeNumbersLowerThan(limit + 1);
-            int primeCount = primes.Count;
             int[][] ordinalFactors = new int[limit + 1][];
-            int[][] factorialFactors = FactorialFactors(limit, primeCount, primes, ref ordinalFactors);
+            int[][] factorialFactors = FactorialFactors(limit, ref ordinalFactors);
 
             long sum = 1;
-            int[] factors = new int[primeCount + 1];
+            int[] factors = new int[primes.Count];
             for (int n = 2; n <= limit; n++)
             {
-                for (int i = 0; i <= primeCount; i++)
-                    factors[i] += ordinalFactors[n][i] * (n - 1) + ordinalFactors[n - 1][i] - factorialFactors[n - 1][i] * 2;
+                for (int i = 0; i < primes.Count; i++)
+                    factors[i] += ordinalFactors[n][i] * (n - 1) - factorialFactors[n - 1][i];
 
-                sum = (sum + D(factors, primes, primeCount)) % div;
+                sum = (sum + DivisorSum(factors)) % div;
             }
 
             return sum.ToString();
