@@ -11,7 +11,7 @@ namespace ProjectEuler
         static void Main(string[] args)
         {
             //SpecialNumbers.Print(SpecialNumbers.Triangle(698));
-            Console.WriteLine("Result = " + new Problem650().GetResult());
+            Console.WriteLine("Result = " + new Problem577().GetResult());
         }
     }
 }
