@@ -12,7 +12,7 @@
             "program": "${workspaceFolder}/ProjectEuler/bin/Debug/netcoreapp2.1/ProjectEuler.dll",
             "args": [],
             "cwd": "${workspaceFolder}/ProjectEuler",
-            "console": "externalTerminal",
+            "console": "internalConsole",
             "stopAtEntry": false
         },
         {

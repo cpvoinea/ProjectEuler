@@ -11,6 +11,7 @@ namespace ProjectEuler
         static void Main(string[] args)
         {
             Console.WriteLine("Result = " + new Problem669().GetResult());
+            // Console.ReadKey(true);
         }
     }
 }
