@@ -9,17 +9,12 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/ProjectEuler/bin/Debug/netcoreapp2.1/ProjectEuler.dll",
+            "program": "${workspaceFolder}/bin/Debug/netcoreapp3.0/ProjectEuler.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/ProjectEuler",
+            "cwd": "${workspaceFolder}",
             "console": "internalConsole",
-            "stopAtEntry": false
-        },
-        {
-            "name": ".NET Core Attach",
-            "type": "coreclr",
-            "request": "attach",
-            "processId": "${command:pickProcess}"
+            "stopAtEntry": false,
+            "internalConsoleOptions": "openOnSessionStart"
         }
     ]
 }
