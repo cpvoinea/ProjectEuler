@@ -4,7 +4,7 @@ namespace ProjectEuler
 {
     class Problem125 : IProblem
     {
-        public string GetResult()
+        public object GetResult()
         {
             const int limit = 10001;
             const int max = 100000000;
@@ -33,7 +33,7 @@ namespace ProjectEuler
                 i++;
             }
 
-            return sum.ToString();
+            return sum;
         }
     }
 }

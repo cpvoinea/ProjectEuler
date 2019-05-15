@@ -25,9 +25,9 @@ namespace ProjectEuler
             return 0;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
-            return GetPythagoreanProductWithSum(1000).ToString();
+            return GetPythagoreanProductWithSum(1000);
         }
     }
 }

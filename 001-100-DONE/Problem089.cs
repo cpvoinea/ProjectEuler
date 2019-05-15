@@ -97,7 +97,7 @@ namespace ProjectEuler
             return n + s.Length - i;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             int result = 0;
             using (StreamReader sr = new StreamReader("Resources\\Problem089.txt"))
@@ -110,7 +110,7 @@ namespace ProjectEuler
                 }
             }
 
-            return result.ToString();
+            return result;
         }
     }
 }

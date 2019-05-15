@@ -12,13 +12,13 @@
             return s;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             string n = "1";
             for (int i = 0; i < 1000; i++)
                 n = Common.AddLargeInt(n, n);
 
-            return GetDigitSum(n).ToString();
+            return GetDigitSum(n);
         }
     }
 }

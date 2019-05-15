@@ -32,7 +32,7 @@ namespace ProjectEuler
             return c;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             long d = 2;
             int count = 0;
@@ -44,7 +44,7 @@ namespace ProjectEuler
                 d = next;
             }
 
-            return count.ToString();
+            return count;
         }
     }
 }

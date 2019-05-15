@@ -15,15 +15,15 @@ namespace ProjectEuler
             return sum;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             const int limit = 12345;
-            //return H(20).ToString();
+            //return H(20);
             long sum = 0;
             for (int n = 3; n <= limit; n++)
                 sum += H(n);
 
-            return sum.ToString();
+            return sum;
         }
     }
 }

@@ -6,7 +6,7 @@ namespace ProjectEuler
 {
     class Problem098 : IProblem
     {
-        public string GetResult()
+        public object GetResult()
         {
             string[] words = Common.GetTextFromFile("Resources\\Problem098.txt").Split(',').Select(w => w.Trim('"')).ToArray();
 
@@ -107,7 +107,7 @@ namespace ProjectEuler
                         maxCand = v;
             }
 
-            return maxCand.ToString();
+            return maxCand;
         }
     }
 }

@@ -39,7 +39,7 @@ namespace ProjectEuler
             return maxN + " " + maxL;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             return GetLongestChainSeedBelow(1000000);
         }

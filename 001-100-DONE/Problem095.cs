@@ -5,7 +5,7 @@ namespace ProjectEuler
 {
     class Problem095 : IProblem
     {
-        public string GetResult()
+        public object GetResult()
         {
             const int limit = 1000000;
             HashSet<int> maxChain = new HashSet<int>();
@@ -27,7 +27,7 @@ namespace ProjectEuler
                     maxChain = chain;
             }
 
-            return maxChain.Min().ToString();
+            return maxChain.Min();
         }
     }
 }

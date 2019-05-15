@@ -34,7 +34,7 @@ namespace ProjectEuler
             }
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             string w = "";
             for (int i = 0; i < limit; i++)

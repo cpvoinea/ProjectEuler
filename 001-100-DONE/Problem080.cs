@@ -17,7 +17,7 @@ namespace ProjectEuler
             return i + RootSum(r * 10 + i, n - ((m + i) * i), c - 1);
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             int i = 1;
             int i2 = 1;
@@ -37,7 +37,7 @@ namespace ProjectEuler
                 }
             }
 
-            return s.ToString();
+            return s;
         }
     }
 }

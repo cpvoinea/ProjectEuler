@@ -4,7 +4,7 @@ namespace ProjectEuler
 {
     class Problem030 : IProblem
     {
-        public string GetResult()
+        public object GetResult()
         {
             int limit = 10 * (int)Math.Pow(9, 5) + 1;
 
@@ -26,7 +26,7 @@ namespace ProjectEuler
                 }
             }
 
-            return s.ToString();
+            return s;
         }
     }
 }

@@ -2,7 +2,7 @@
 {
     class Problem058 : IProblem
     {
-        public string GetResult()
+        public object GetResult()
         {
             long count = 8;
             long l = 4;
@@ -16,7 +16,7 @@
                 if (Common.IsPrime(x + 2 * l))
                     count++;
                 if (count * 10 < 4 * l + 1)
-                    return (2 * l + 1).ToString();
+                    return (2 * l + 1);
                 l++;
             }
         }

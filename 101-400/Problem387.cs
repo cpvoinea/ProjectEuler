@@ -62,13 +62,13 @@ namespace ProjectEuler
             return s;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             long sum = 0;
             foreach (long c in new long[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 })
                 sum += Check(c);
 
-            return sum.ToString();
+            return sum;
         }
     }
 }

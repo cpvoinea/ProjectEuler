@@ -18,14 +18,14 @@ namespace ProjectEuler
             return m;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             const int n = 80;
             int[][] matrix = File.ReadAllLines("Resources\\Problem081.txt")
                 .Select((l, i) => l.Split(',').Select(s => int.Parse(s)).ToArray())
                 .ToArray();
             int[,] min = new int[n, n];
-            return GetMin(matrix, min, n - 1, n - 1).ToString();
+            return GetMin(matrix, min, n - 1, n - 1);
         }
     }
 }

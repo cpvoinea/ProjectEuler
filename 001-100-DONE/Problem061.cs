@@ -61,7 +61,7 @@ namespace ProjectEuler
             return false;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             int k1 = 8;
             foreach (int n1 in _numbers[k1])
@@ -70,7 +70,7 @@ namespace ProjectEuler
                 if (Find(ref result, new List<int> { k1 }))
                 {
                     Console.WriteLine("{0} {1} {2} {3} {4} {5}", result[0], result[1], result[2], result[3], result[4], result[5]);
-                    return (result[0] + result[1] + result[2] + result[3] + result[4] + result[5]).ToString();
+                    return (result[0] + result[1] + result[2] + result[3] + result[4] + result[5]);
                 }
             }
 

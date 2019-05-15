@@ -28,7 +28,7 @@ namespace ProjectEuler
             return div;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             const int limit = 10_000_000;
             long sum = 0;
@@ -70,7 +70,7 @@ namespace ProjectEuler
                 if (!hit[i])
                     sum++;
 
-            return sum.ToString();
+            return sum;
         }
     }
 }

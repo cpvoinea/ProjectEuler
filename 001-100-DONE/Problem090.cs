@@ -54,7 +54,7 @@ namespace ProjectEuler
             return sb.ToString();
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             List<int[]> comb = new List<int[]>();
             GetComb(0, 0, new int[6], comb);
@@ -69,7 +69,7 @@ namespace ProjectEuler
                             c.Add(k);
                     }
 
-            return c.Count.ToString();
+            return c.Count;
         }
     }
 }

@@ -25,7 +25,7 @@ namespace ProjectEuler
             return (m / c) % 10;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             Console.WriteLine(GetDigit(10));
             int limit = 7;
@@ -37,7 +37,7 @@ namespace ProjectEuler
                 c *= 10;
             }
 
-            return p.ToString();
+            return p;
         }
     }
 }

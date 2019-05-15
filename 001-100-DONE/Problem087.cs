@@ -6,7 +6,7 @@ namespace ProjectEuler
 {
     class Problem087 : IProblem
     {
-        public string GetResult()
+        public object GetResult()
         {
             const int limit = 50000000;
             const int limit1 = 7069;
@@ -32,7 +32,7 @@ namespace ProjectEuler
                 }
             }
 
-            return numbers.Count.ToString();
+            return numbers.Count;
         }
     }
 }

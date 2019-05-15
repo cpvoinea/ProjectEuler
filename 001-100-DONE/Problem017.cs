@@ -53,13 +53,13 @@ namespace ProjectEuler
             return count;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             Dictionary<string, int> count = GetWordCount1000();
             long s = 0;
             foreach (string word in count.Keys)
                 s += word.Length * count[word];
-            return s.ToString();
+            return s;
         }
     }
 }

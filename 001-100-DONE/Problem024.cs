@@ -5,7 +5,7 @@ namespace ProjectEuler
 {
     class Problem024 : IProblem
     {
-        public string GetResult()
+        public object GetResult()
         {
             string r = "";
             int limit = 1000000;

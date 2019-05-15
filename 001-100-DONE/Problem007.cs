@@ -26,9 +26,9 @@ namespace ProjectEuler
             }
         }
 
-        public string GetResult()
+        public object GetResult()
         {
-            return GetPrimeNo(10001).ToString();
+            return GetPrimeNo(10001);
         }
     }
 }

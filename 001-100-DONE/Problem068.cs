@@ -76,7 +76,7 @@ namespace ProjectEuler
             }
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             string[] candidates = new[] { "98521", "97531", "97432", "96541", "87541", "86542", "95321", "86321", "85421", "76421", "75431", "65432", "54321" };
             List<string> magicList = new List<string>();

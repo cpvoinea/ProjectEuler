@@ -10,7 +10,7 @@ namespace ProjectEuler
             return s * s == n;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             const int limit = 166666666;
             long sum = 0;
@@ -22,7 +22,7 @@ namespace ProjectEuler
                 if (IsPP(k * (p + 1)))
                     sum += 2 * (p + 1);
             }
-            return sum.ToString();
+            return sum;
         }
     }
 }

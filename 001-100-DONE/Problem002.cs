@@ -24,9 +24,9 @@ namespace ProjectEuler
             return s;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
-            return CalculateFibbonacciEvenSumLessThan(4000000).ToString();
+            return CalculateFibbonacciEvenSumLessThan(4000000);
         }
     }
 }

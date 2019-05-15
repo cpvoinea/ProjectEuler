@@ -2,7 +2,7 @@
 {
     class Problem038 : IProblem
     {
-        public string GetResult()
+        public object GetResult()
         {
             // prin deductie, n = 2 si x = 9182..9999
             int max = 918273645;
@@ -12,7 +12,7 @@
                 if (Common.IsPandigital(n.ToString()))
                     max = n;
             }
-            return max.ToString();
+            return max;
         }
     }
 }

@@ -20,7 +20,7 @@ namespace ProjectEuler
             return 0;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             int cmax = 0;
             int nmax = 2;

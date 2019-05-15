@@ -15,7 +15,7 @@ namespace ProjectEuler
                 Roll(rolls - 1, dice, sum + i, result);
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             int[] pete = new int[37];
             int[] colin = new int[37];
@@ -35,7 +35,7 @@ namespace ProjectEuler
             for (int j = 6; j <= 36; j++)
                 sc += colin[j];
             double p = (double)c / (sp * sc);
-            return Math.Round(p, 7).ToString();
+            return Math.Round(p, 7);
         }
     }
 }

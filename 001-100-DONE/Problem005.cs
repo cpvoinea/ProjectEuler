@@ -67,7 +67,7 @@ namespace ProjectEuler
             return result;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             int n = 20;
             return GetSmallestNumberDivisibleWithAllBelow(n) + " Better method: " + GetSmallestNumberDivisibleWithAllBelow(n, true);

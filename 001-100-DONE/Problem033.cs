@@ -4,7 +4,7 @@ namespace ProjectEuler
 {
     class Problem033 : IProblem
     {
-        public string GetResult()
+        public object GetResult()
         {
             int mp = 1, np = 1;
             for (int x = 1; x <= 9; x++)

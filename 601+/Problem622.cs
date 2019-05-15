@@ -16,7 +16,7 @@ namespace ProjectEuler
             return Check(n, current * 2 - n, count + 1);
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             long max = (long)System.Math.Pow(2, s);
             long min = (long)System.Math.Sqrt(max);
@@ -32,7 +32,7 @@ namespace ProjectEuler
                         sum += i + 1;
                 }
 
-            return sum.ToString();
+            return sum;
         }
     }
 }

@@ -2,7 +2,7 @@
 {
     class Problem187 : IProblem
     {
-        public string GetResult()
+        public object GetResult()
         {
             const int limit = 100000000;
             var prime = Common.GeneratePrimes(limit / 2);
@@ -15,7 +15,7 @@
                             c++;
                 }
 
-            return c.ToString();
+            return c;
         }
     }
 }

@@ -95,7 +95,7 @@ namespace ProjectEuler
             }
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             int max = 0;
             string cMax = "";

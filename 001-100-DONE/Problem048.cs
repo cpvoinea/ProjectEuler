@@ -2,7 +2,7 @@
 {
     class Problem048 : IProblem
     {
-        public string GetResult()
+        public object GetResult()
         {
             int target = 10;
             int limit = 1000;

@@ -124,7 +124,7 @@ namespace ProjectEuler
             return Done(s);
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             int sum = 0;
             var lines = File.ReadAllLines("Resources\\Problem096.txt");
@@ -164,7 +164,7 @@ namespace ProjectEuler
                 l += 10;
             }
 
-            return sum.ToString();
+            return sum;
         }
     }
 }

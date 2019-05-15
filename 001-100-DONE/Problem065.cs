@@ -13,7 +13,7 @@
             }
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             int n = 99;
             int p = 33;
@@ -30,7 +30,7 @@
                 n--;
             }
             f = f.Next(2);
-            return Common.GetSumOfDigits(f.Up).ToString();
+            return Common.GetSumOfDigits(f.Up);
         }
     }
 }

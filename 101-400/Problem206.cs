@@ -16,16 +16,16 @@
             return true;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             for (int n = 10000001; n < 14000000; n++)
             {
                 long m = n * 10 + 3;
                 if (Check(m * m / 100))
-                    return (m * 10).ToString();
+                    return (m * 10);
                 m = n * 10 + 7;
                 if (Check(m * m / 100))
-                    return (m * 10).ToString();
+                    return (m * 10);
             }
             return "NONE";
         }

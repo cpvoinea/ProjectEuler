@@ -15,12 +15,12 @@
             return S;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             int S = 0;
             for (int i = 2; i <= 100; i++)
                 S += Comb(100, i);
-            return S.ToString();
+            return S;
         }
     }
 }

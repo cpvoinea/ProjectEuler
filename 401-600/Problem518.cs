@@ -6,7 +6,7 @@ namespace ProjectEuler
 {
     class Problem518 : IProblem
     {
-        public string GetResult()
+        public object GetResult()
         {
             const int limit = 100_000_000;
             var isPrime = Common.GeneratePrimes(limit);
@@ -69,7 +69,7 @@ namespace ProjectEuler
                 ia++;
             }
 
-            return sum.ToString();
+            return sum;
         }
     }
 }

@@ -21,7 +21,7 @@
             return !asc && !desc;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             long n = 0;
             long count = 0;
@@ -36,7 +36,7 @@
                         ok = true;
                 }
             }
-            return n.ToString();
+            return n;
         }
     }
 }

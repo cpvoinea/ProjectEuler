@@ -150,7 +150,7 @@ namespace ProjectEuler
             return s;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             StreamReader sr = new StreamReader("Resources\\Problem018.txt");
             List<int[]> lines = new List<int[]>();
@@ -162,7 +162,7 @@ namespace ProjectEuler
             //Triangle t2 = new Triangle(lines);
 
             int sum1 = GetTriangleMaxSum(t1);
-            return sum1.ToString();
+            return sum1;
         }
     }
 }

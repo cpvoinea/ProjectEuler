@@ -46,7 +46,7 @@ namespace ProjectEuler
                 GetList(factors, n * f, list);
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             const int idx = 10000;
             int n = 2;
@@ -62,7 +62,7 @@ namespace ProjectEuler
                 int c = list.Count;
                 count += c;
                 if (count > idx)
-                    return list[count - idx + 1].ToString();
+                    return list[count - idx + 1];
                 n++;
             }
 

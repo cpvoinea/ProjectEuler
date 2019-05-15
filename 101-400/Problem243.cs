@@ -15,7 +15,7 @@ namespace ProjectEuler
             AddCandidates(candidates, current, i + 1, max, primes);
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             var primes = Common.GetPrimeNumbersLowerThan(100);
             long n = 1;
@@ -42,7 +42,7 @@ namespace ProjectEuler
             {
                 double m = f * c * 94744.0 / 15499 / (n * c - 1);
                 if (m < 1)
-                    return (n * c).ToString();
+                    return (n * c);
             }
 
             return "N/A";

@@ -42,7 +42,7 @@ namespace ProjectEuler
             return result;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             int limit = 1000000;
             List<int> primes = Common.GetPrimeNumbersLowerThan(limit).Where(n => n > 10000).ToList();

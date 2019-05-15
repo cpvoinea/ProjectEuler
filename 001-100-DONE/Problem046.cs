@@ -5,7 +5,7 @@ namespace ProjectEuler
 {
     class Problem046 : IProblem
     {
-        public string GetResult()
+        public object GetResult()
         {
             long limit = 10000000;
             List<long> primes = new List<long>();
@@ -23,7 +23,7 @@ namespace ProjectEuler
                             ok = true;
                     }
                     if (!ok)
-                        return i.ToString();
+                        return i;
                 }
             }
 

@@ -17,10 +17,10 @@
             return s;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             int len = 7; //coins.Length - 1;
-            return GetCombinationCount(coins[len], len).ToString();
+            return GetCombinationCount(coins[len], len);
         }
     }
 }

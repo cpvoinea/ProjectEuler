@@ -4,7 +4,7 @@ namespace ProjectEuler
 {
     class Problem323 : IProblem
     {
-        public string GetResult()
+        public object GetResult()
         {
             const int n = 32;
             const int limit = 100;
@@ -26,7 +26,7 @@ namespace ProjectEuler
                 e *= 2;
             }
 
-            return s.ToString();
+            return s;
         }
     }
 }

@@ -5,7 +5,7 @@ namespace ProjectEuler
 {
     class Problem078 : IProblem
     {
-        public string GetResult()
+        public object GetResult()
         {
             const int div = 1000000;
             Dictionary<int, BigInteger> b = new Dictionary<int, BigInteger> { { 1, 1 } };
@@ -24,7 +24,7 @@ namespace ProjectEuler
                 }
                 sb = (sb + sc) / n;
                 if (sb % div == 0)
-                    return n.ToString();
+                    return n;
                 b.Add(n, sb);
                 c.Add(n, sc);
             }

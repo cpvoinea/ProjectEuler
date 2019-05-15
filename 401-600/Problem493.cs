@@ -17,14 +17,14 @@
             return p / inUrn;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             double s = 0;
 
             for (int i = 1; i <= 7; i++)
                 s += i * Prob(20, i);
 
-            return s.ToString();
+            return s;
         }
     }
 }

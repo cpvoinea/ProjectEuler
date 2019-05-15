@@ -5,7 +5,7 @@ namespace ProjectEuler
 {
     class Problem029 : IProblem
     {
-        public string GetResult()
+        public object GetResult()
         {
             int limit = 100;
             List<int> primes = Common.GetPrimeNumbersLowerThan(limit);
@@ -42,7 +42,7 @@ namespace ProjectEuler
                 }
             }
 
-            return unique.Count.ToString();
+            return unique.Count;
         }
     }
 }

@@ -5,7 +5,7 @@ namespace ProjectEuler
 {
     class Problem346 : IProblem
     {
-        public string GetResult()
+        public object GetResult()
         {
             const long limit = 1000000000000;
             long n = 2;
@@ -28,7 +28,7 @@ namespace ProjectEuler
             foreach (long x in hs)
                 sum += x;
 
-            return sum.ToString();
+            return sum;
         }
     }
 }

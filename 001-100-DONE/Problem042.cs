@@ -6,7 +6,7 @@ namespace ProjectEuler
 {
     class Problem042 : IProblem
     {
-        public string GetResult()
+        public object GetResult()
         {
             int limit = 33;
             List<int> triangleNumbers = new List<int>();
@@ -23,7 +23,7 @@ namespace ProjectEuler
                     count++;
             }
 
-            return count.ToString();
+            return count;
         }
     }
 }

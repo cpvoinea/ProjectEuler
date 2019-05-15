@@ -9,7 +9,7 @@ namespace ProjectEuler
             return n > 1 && ((n < 2000 && primes.Contains(n)) || Common.IsPrime(n));
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             List<int> primes = Common.GetPrimeNumbersLowerThan(2000);
             int nMax = 0;

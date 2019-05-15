@@ -13,7 +13,7 @@ namespace ProjectEuler
             return true;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             BigInteger n = 2, x = 1, y = 1;
             while (n <= 2749 || !Check(y))
@@ -23,7 +23,7 @@ namespace ProjectEuler
                 n++;
             }
 
-            return n.ToString();
+            return n;
         }
     }
 }

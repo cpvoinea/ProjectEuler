@@ -33,7 +33,7 @@ namespace ProjectEuler
             return h == k;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             HashSet<double> candidates = new HashSet<double>();
             for (double i = 1; i <= 1000; i++)
@@ -76,7 +76,7 @@ namespace ProjectEuler
                 }
             }
 
-            return nmax.ToString();
+            return nmax;
         }
     }
 }

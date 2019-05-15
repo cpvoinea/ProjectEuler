@@ -13,7 +13,7 @@ namespace ProjectEuler
             return s;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             string namesStr = Common.GetTextFromFile("Resources\\Problem022.txt");
             string[] names = namesStr.Split(',').Select(s => s.Trim('"')).OrderBy(s => s).ToArray();
@@ -22,7 +22,7 @@ namespace ProjectEuler
             for (int i = 0; i < names.Length; i++)
                 sum += (i + 1) * Value(names[i]);
 
-            return sum.ToString();
+            return sum;
         }
     }
 }

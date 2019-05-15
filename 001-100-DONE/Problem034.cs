@@ -6,7 +6,7 @@ namespace ProjectEuler
     {
         int[] factorial = new int[] { 1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880 };
 
-        public string GetResult()
+        public object GetResult()
         {
             long result = 0;
             for (long i = 10; i < 100000000; i++)
@@ -26,7 +26,7 @@ namespace ProjectEuler
                 }
             }
 
-            return result.ToString();
+            return result;
         }
     }
 }

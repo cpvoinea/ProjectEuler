@@ -14,7 +14,7 @@ namespace ProjectEuler
             return new string(si) == new string(sj);
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             const byte c = 5;
             const double step = 2.15443469003;
@@ -36,7 +36,7 @@ namespace ProjectEuler
                             break;
                     }
                     if (count == c)
-                        return first.ToString();
+                        return first;
 
                     i++;
                 }

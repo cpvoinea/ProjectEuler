@@ -63,7 +63,7 @@
             return s;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             const int limit = 20000000;
             var bPrimes = Common.GeneratePrimes(limit);
@@ -91,7 +91,7 @@
                 }
                 n++;
             }
-            return s.ToString();
+            return s;
         }
     }
 }

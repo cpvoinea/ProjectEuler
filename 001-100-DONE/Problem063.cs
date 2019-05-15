@@ -2,7 +2,7 @@
 {
     class Problem063 : IProblem
     {
-        public string GetResult()
+        public object GetResult()
         {
             int count = 0;
             int d = 1;
@@ -22,7 +22,7 @@
                 d++;
             }
 
-            return count.ToString();
+            return count;
         }
     }
 }

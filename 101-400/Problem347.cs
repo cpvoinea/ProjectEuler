@@ -5,7 +5,7 @@ namespace ProjectEuler
 {
     class Problem347 : IProblem
     {
-        public string GetResult()
+        public object GetResult()
         {
             const int limit = 10000000;
             int primeLimit = (int)Math.Sqrt(limit);
@@ -44,7 +44,7 @@ namespace ProjectEuler
                     sum += max;
                 }
 
-            return sum.ToString();
+            return sum;
         }
     }
 }

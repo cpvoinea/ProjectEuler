@@ -24,7 +24,7 @@ namespace ProjectEuler
                 _values.Add(0, new List<byte>());
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             using (StreamReader sr = new StreamReader("Resources\\Problem079.txt"))
             {

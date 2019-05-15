@@ -35,7 +35,7 @@ namespace ProjectEuler
             return nt;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             const long limit = 10;// 0000000000;
             const long div = 998244353;
@@ -64,7 +64,7 @@ namespace ProjectEuler
             }
             sum = (sum + s) % div;
 
-            return sum.ToString();
+            return sum;
         }
     }
 }

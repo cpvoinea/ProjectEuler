@@ -4,7 +4,7 @@ namespace ProjectEuler
 {
     class Problem131 : IProblem
     {
-        public string GetResult()
+        public object GetResult()
         {
             const int limit = 1000000;
             BitArray isPrime = Common.GeneratePrimes(limit);
@@ -18,7 +18,7 @@ namespace ProjectEuler
                     count++;
                 n++;
             }
-            return count.ToString();
+            return count;
         }
     }
 }

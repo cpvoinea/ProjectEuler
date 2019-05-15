@@ -4,7 +4,7 @@ namespace ProjectEuler
 {
     class Problem050 : IProblem
     {
-        public string GetResult()
+        public object GetResult()
         {
             int limit = 1000000;
             List<int> primes = Common.GetPrimeNumbersLowerThan(limit);
@@ -24,7 +24,7 @@ namespace ProjectEuler
             while (count >= 21)
             {
                 if (primes.Contains(s))
-                    return s.ToString();
+                    return s;
 
                 s -= primes[from];
                 from++;

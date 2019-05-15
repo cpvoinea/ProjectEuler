@@ -5,7 +5,7 @@ namespace ProjectEuler
 {
     class Problem032 : IProblem
     {
-        public string GetResult()
+        public object GetResult()
         {
             List<long> list = new List<long>();
             #region comment
@@ -76,7 +76,7 @@ namespace ProjectEuler
                 }
             }
 
-            return list.Sum().ToString();
+            return list.Sum();
         }
     }
 }

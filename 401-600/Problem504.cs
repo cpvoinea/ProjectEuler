@@ -27,7 +27,7 @@ namespace ProjectEuler
             return c;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             const int l = 100;
             Dictionary<int, bool> squares = new Dictionary<int, bool>();
@@ -43,7 +43,7 @@ namespace ProjectEuler
                             if (squares.ContainsKey(s))
                                 count++;
                         }
-            return count.ToString();
+            return count;
         }
     }
 }

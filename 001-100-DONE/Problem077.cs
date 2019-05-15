@@ -4,7 +4,7 @@ namespace ProjectEuler
 {
     class Problem077 : IProblem
     {
-        public string GetResult()
+        public object GetResult()
         {
             List<int> primes = Common.GetPrimeNumbersLowerThan(100000000);
             int count = primes.Count;
@@ -32,7 +32,7 @@ namespace ProjectEuler
                 b[n] = s / n;
             }
 
-            return n.ToString();
+            return n;
         }
     }
 }

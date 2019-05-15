@@ -4,7 +4,7 @@ namespace ProjectEuler
 {
     class Problem039 : IProblem
     {
-        public string GetResult()
+        public object GetResult()
         {
             int limit = 1000;
             int maxCount = 0;
@@ -41,7 +41,7 @@ namespace ProjectEuler
                 }
             }
 
-            return maxI.ToString();
+            return maxI;
         }
     }
 }

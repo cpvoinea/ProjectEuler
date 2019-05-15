@@ -55,7 +55,7 @@ namespace ProjectEuler
             return result;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             int n = 5;
             List<int> sums = new List<int>();
@@ -90,7 +90,7 @@ namespace ProjectEuler
                 }
             }
 
-            return sums.Count == 0 ? "0" : sums.Min().ToString();
+            return sums.Count == 0 ? 0 : sums.Min();
         }
     }
 }

@@ -5,7 +5,7 @@ namespace ProjectEuler
 {
     class Problem669 : IProblem
     {
-        public string GetResult()
+        public object GetResult()
         {
             const long place = 10_000_000_000_000_000;
             double phi = (Math.Sqrt(5) + 3) / 2;
@@ -43,7 +43,7 @@ namespace ProjectEuler
             BigInteger b2 = new BigInteger(b) * f2;
             BigInteger result = b1 - b2;
 
-            return result.ToString();
+            return result;
         }
     }
 }

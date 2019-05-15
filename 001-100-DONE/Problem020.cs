@@ -2,7 +2,7 @@
 {
     class Problem020 : IProblem
     {
-        public string GetResult()
+        public object GetResult()
         {
             string fact = "1";
             for (int i = 1; i <= 100; i++)
@@ -11,7 +11,7 @@
             for (int i = 0; i < fact.Length; i++)
                 s += fact[i] - 48;
 
-            return s.ToString();
+            return s;
         }
     }
 }

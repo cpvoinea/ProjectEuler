@@ -2,9 +2,9 @@
 {
     class Problem069 : IProblem
     {
-        public string GetResult()
+        public object GetResult()
         {
-            return (2 * 3 * 5 * 7 * 11 * 13 * 17).ToString();
+            return (2 * 3 * 5 * 7 * 11 * 13 * 17);
         }
     }
 }

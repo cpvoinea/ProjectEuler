@@ -22,7 +22,7 @@ namespace ProjectEuler
             return true;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             Dictionary<int, int> sums = new Dictionary<int, int>();
             for (int m = 2; m <= 1000; m++)

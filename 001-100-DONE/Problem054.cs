@@ -265,7 +265,7 @@ namespace ProjectEuler
             return false;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             using (StreamReader sr = new StreamReader("Resources\\Problem054.txt"))
             {
@@ -276,7 +276,7 @@ namespace ProjectEuler
                     count += Check(cards.ToArray()) ? 1 : 0;
                 }
 
-                return count.ToString();
+                return count;
             }
         }
     }

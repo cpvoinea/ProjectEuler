@@ -4,7 +4,7 @@ namespace ProjectEuler
 {
     class Problem357 : IProblem
     {
-        public string GetResult()
+        public object GetResult()
         {
             const int limit = 100000000;
             BitArray primes = Common.GeneratePrimes(limit);
@@ -31,7 +31,7 @@ namespace ProjectEuler
                 n += 2;
             }
 
-            return sum.ToString();
+            return sum;
         }
     }
 }

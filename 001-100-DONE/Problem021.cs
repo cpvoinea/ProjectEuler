@@ -6,7 +6,7 @@ namespace ProjectEuler
     {
         Dictionary<int, int> cachedD = new Dictionary<int, int>();
 
-        public string GetResult()
+        public object GetResult()
         {
             int s = 0;
             int limit = 10000;
@@ -31,7 +31,7 @@ namespace ProjectEuler
                     s += i;
             }
 
-            return s.ToString();
+            return s;
         }
     }
 }

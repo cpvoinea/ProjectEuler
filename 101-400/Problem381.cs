@@ -16,7 +16,7 @@
             return s;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             const int limit = 100000000;
             var primes = Common.GetPrimeNumbersLowerThan(limit);
@@ -33,7 +33,7 @@
                 sum += (x * 9) % p;
             }
 
-            return sum.ToString();
+            return sum;
         }
     }
 }

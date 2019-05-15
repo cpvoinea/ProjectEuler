@@ -19,10 +19,10 @@
             }
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             CountFrom(0, false, 0);
-            return count.ToString();
+            return count;
         }
     }
 }

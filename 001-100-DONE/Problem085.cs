@@ -4,7 +4,7 @@ namespace ProjectEuler
 {
     class Problem085 : IProblem
     {
-        public string GetResult()
+        public object GetResult()
         {
             // N = nm(n+1)(m+1)/4
             const int limit = 2000000;
@@ -23,7 +23,7 @@ namespace ProjectEuler
                         minJ = j;
                     }
                 }
-            return (minI * minJ).ToString();
+            return (minI * minJ);
         }
     }
 }

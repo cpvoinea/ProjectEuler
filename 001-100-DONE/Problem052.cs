@@ -19,7 +19,7 @@ namespace ProjectEuler
             return true;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             string template = "111111";
             string n = template;

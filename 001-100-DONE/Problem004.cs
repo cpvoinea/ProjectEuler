@@ -30,7 +30,7 @@ namespace ProjectEuler
             return "NOT FOUND";
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             return GetLargestPalindromeProduct();
         }

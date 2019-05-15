@@ -42,7 +42,7 @@ namespace ProjectEuler
             return max;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             string[] lines = File.ReadAllLines("Resources\\Problem345.txt");
             int[][] matrix = new int[lines.Length][];
@@ -62,7 +62,7 @@ namespace ProjectEuler
 
             int sum = Sum(0, v, matrix, new Dictionary<string, int>());
 
-            return sum.ToString();
+            return sum;
         }
     }
 }

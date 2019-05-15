@@ -10,7 +10,7 @@ namespace ProjectEuler
             return b >= 32 && b < 123;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             byte[] cipher = Common.GetTextFromFile("Resources\\Problem059.txt").Split(',').Select(n => byte.Parse(n)).ToArray();
 
@@ -45,7 +45,7 @@ namespace ProjectEuler
                 sum += (byte)key[i % 3] ^ cipher[i];
             }
 
-            return sum.ToString();
+            return sum;
         }
     }
 }

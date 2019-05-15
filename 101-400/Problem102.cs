@@ -30,7 +30,7 @@ namespace ProjectEuler
             return b1 == b2 && b2 == b3;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             int count = 0;
             using (StreamReader sr = new StreamReader("Resources\\Problem102.txt"))
@@ -45,7 +45,7 @@ namespace ProjectEuler
                         count++;
                 }
 
-            return count.ToString();
+            return count;
         }
     }
 }

@@ -61,7 +61,7 @@ namespace ProjectEuler
             }
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             int count = 0;
             for (int i = 2; i <= 10000; i++)
@@ -71,7 +71,7 @@ namespace ProjectEuler
                     count++;
             }
 
-            return count.ToString();
+            return count;
         }
     }
 }

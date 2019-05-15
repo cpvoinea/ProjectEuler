@@ -2,7 +2,7 @@
 {
     class Problem073 : IProblem
     {
-        public string GetResult()
+        public object GetResult()
         {
             const int limit = 12000;
             var primes = Common.GetPrimeNumbersLowerThan(limit);
@@ -23,7 +23,7 @@
                     if (reduced)
                         count++;
                 }
-            return count.ToString();
+            return count;
         }
     }
 }

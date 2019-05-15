@@ -6,7 +6,7 @@ namespace ProjectEuler
     {
         List<long> pentagonalNumbers = new List<long>();
 
-        public string GetResult()
+        public object GetResult()
         {
             int limit = 10000;
             for (long j = 1; j <= limit; j++)
@@ -24,7 +24,7 @@ namespace ProjectEuler
                     long sum = pentagonalNumbers[n + i] + pentagonalNumbers[n];
                     if (pentagonalNumbers.Contains(sum))
                     {
-                        return d.ToString();
+                        return d;
                     }
                 }
                 if (dif > d)

@@ -6,7 +6,7 @@ namespace ProjectEuler
 {
     class Problem023 : IProblem
     {
-        public string GetResult()
+        public object GetResult()
         {
             List<int> abundant = new List<int>();
             int limit = 28123;
@@ -36,7 +36,7 @@ namespace ProjectEuler
                 }
             }
 
-            return all.Sum().ToString();
+            return all.Sum();
         }
     }
 }

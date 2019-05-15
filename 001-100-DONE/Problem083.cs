@@ -5,7 +5,7 @@ namespace ProjectEuler
 {
     class Problem083 : IProblem
     {
-        public string GetResult()
+        public object GetResult()
         {
             int n = 80;
             int[][] matrix = File.ReadAllLines("Resources\\Problem083.txt")
@@ -95,7 +95,7 @@ namespace ProjectEuler
                 }
             }
 
-            return dist[n - 1, n - 1].ToString();
+            return dist[n - 1, n - 1];
         }
     }
 }

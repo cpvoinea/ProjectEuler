@@ -15,7 +15,7 @@ namespace ProjectEuler
                     length = i + 1;
             string k = "";
             for (int i = 0; i < length; i++)
-                k += a[i].ToString();
+                k += a[i];
             return k;
         }
 
@@ -63,7 +63,7 @@ namespace ProjectEuler
             return c;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             BigInteger limit = 1000000;
             limit *= limit;
@@ -87,7 +87,7 @@ namespace ProjectEuler
             pow = Copy(pow);
 
             long count = Count(pow, pow.Length - 1);
-            return count.ToString();
+            return count;
         }
     }
 }

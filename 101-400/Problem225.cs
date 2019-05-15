@@ -2,7 +2,7 @@ namespace ProjectEuler
 {
     class Problem255 : IProblem
     {
-        public string GetResult()
+        public object GetResult()
         {
             return "2009";
         }

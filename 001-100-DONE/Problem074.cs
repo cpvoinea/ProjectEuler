@@ -4,7 +4,7 @@ namespace ProjectEuler
 {
     class Problem074 : IProblem
     {
-        public string GetResult()
+        public object GetResult()
         {
             int[] fact = new int[] { 1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880 };
             int count = 0;
@@ -27,7 +27,7 @@ namespace ProjectEuler
                     count++;
             }
 
-            return count.ToString();
+            return count;
         }
     }
 }

@@ -2,7 +2,7 @@
 {
     class Problem071 : IProblem
     {
-        public string GetResult()
+        public object GetResult()
         {
             double max = 0;
             int nmax = 0;
@@ -35,7 +35,7 @@
                 i++;
             }
 
-            return nf.ToString();
+            return nf;
         }
     }
 }

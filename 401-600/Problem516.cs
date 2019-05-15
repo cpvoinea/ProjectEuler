@@ -62,14 +62,14 @@ namespace ProjectEuler
                 SumCombinations(current * hammingPrimes[i], i - 1);
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             Generate(1);
             hammingPrimes.Sort();
             for (int i = hammingPrimes.Count - 1; i >= 0; i--)
                 SumCombinations(hammingPrimes[i], i - 1);
 
-            return sum.ToString();
+            return sum;
         }
     }
 }

@@ -134,10 +134,10 @@ namespace ProjectEuler
             return c;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             long c = Count(10001);
-            return c.ToString();
+            return c;
         }
     }
 }

@@ -2,7 +2,7 @@
 {
     class Problem056 : IProblem
     {
-        public string GetResult()
+        public object GetResult()
         {
             int max = 0;
             for (int a = 2; a < 100; a++)
@@ -17,7 +17,7 @@
                 }
             }
 
-            return max.ToString();
+            return max;
         }
     }
 }

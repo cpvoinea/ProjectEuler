@@ -5,7 +5,7 @@ namespace ProjectEuler
         const int modulo = 1_000_000_007;
         const long limit = 100_000_000_000;
 
-        public string GetResult()
+        public object GetResult()
         {
             var primes = Common.GeneratePrimes(limit, 10000);
             long s = 0;
@@ -17,7 +17,7 @@ namespace ProjectEuler
                 n /= 2;
             }
 
-            return s.ToString();
+            return s;
         }
     }
 }

@@ -2,7 +2,7 @@
 {
     class Problem120 : IProblem
     {
-        public string GetResult()
+        public object GetResult()
         {
             // n par => rmax = 2, n impar => rmax = 2*n*a
             // n impar: a par => rmax = a*a-2*a, a impar => rmax = a*a-a
@@ -12,7 +12,7 @@
                 s += a * (a - 2 + a % 2);
             }
 
-            return s.ToString();
+            return s;
         }
     }
 }

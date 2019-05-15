@@ -15,7 +15,7 @@
             return s;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             int n = 1;
             int count = 0;
@@ -29,7 +29,7 @@
                 n++;
             }
 
-            return count.ToString();
+            return count;
         }
     }
 }

@@ -26,7 +26,7 @@ namespace ProjectEuler
             return n == 1;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             HashSet<int> pfn = new HashSet<int>();
             for (int n = 2; n <= limit; n += 2)
@@ -44,7 +44,7 @@ namespace ProjectEuler
             int s = 0;
             foreach (int m in pfn)
                 s += m;
-            return s.ToString();
+            return s;
         }
     }
 }

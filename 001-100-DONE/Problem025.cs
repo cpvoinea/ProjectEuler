@@ -17,9 +17,9 @@
             return i;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
-            return GetFibonacciWith100Digits().ToString();
+            return GetFibonacciWith100Digits();
         }
     }
 }

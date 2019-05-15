@@ -19,9 +19,9 @@ namespace ProjectEuler
             return n;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
-            return GetLargestPrimeFactorOf(600851475143).ToString();
+            return GetLargestPrimeFactorOf(600851475143);
         }
     }
 }

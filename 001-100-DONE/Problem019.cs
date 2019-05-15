@@ -2,7 +2,7 @@
 {
     class Problem019 : IProblem
     {
-        public string GetResult()
+        public object GetResult()
         {
             int[] daysInMonth = new int[] { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
             int current = 365;
@@ -22,7 +22,7 @@
                         count++;
                 }
             }
-            return count.ToString();
+            return count;
         }
     }
 }

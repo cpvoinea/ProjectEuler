@@ -24,9 +24,9 @@
             return c;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
-            return Count(new[] { 1, 1, 1, 1 }, 1).ToString();
+            return Count(new[] { 1, 1, 1, 1 }, 1);
         }
     }
 }

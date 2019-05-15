@@ -18,7 +18,7 @@
             return n * (n + 1) * (3 * n * n - n - 2) / 12;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             int n = 100;
             return GetDifferenceBetweenSquareOfSumAndSumOfSquaresOfFirst(n) + " Better method: " + GetDifferenceBetweenSquareOfSumAndSumOfSquaresOfFirst(n, true);

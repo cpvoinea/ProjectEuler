@@ -21,7 +21,7 @@
             return true;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             const int limit = 1000000000;
 
@@ -30,7 +30,7 @@
                 if (IsReversible(n))
                     count++;
 
-            return count.ToString();
+            return count;
         }
     }
 }

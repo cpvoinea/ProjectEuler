@@ -51,7 +51,7 @@ namespace ProjectEuler
             return true;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             for (int i = 2; i <= 14; i++)
             {
@@ -71,7 +71,7 @@ namespace ProjectEuler
                 }
             }
 
-            return sum.ToString();
+            return sum;
         }
     }
 }

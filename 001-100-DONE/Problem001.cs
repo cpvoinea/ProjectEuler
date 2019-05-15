@@ -23,7 +23,7 @@
             return GetMultipleSumOf(i, n) + GetMultipleSumOf(j, n) - GetMultipleSumOf(i * j, n);
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             int n = 1000;
             return GetMultipleOf3Or5SumLessThan(n) + " Better method: " + GetMultipleSumOfPair(3, 5, n);

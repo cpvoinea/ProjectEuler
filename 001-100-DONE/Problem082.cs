@@ -30,7 +30,7 @@ namespace ProjectEuler
             return m + matrix[k][j - 1] + matrix[i][j];
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             int[][] matrix = File.ReadAllLines("Resources\\Problem082.txt")
                 .Select((l, i) => l.Split(',').Select(s => int.Parse(s)).ToArray())
@@ -69,7 +69,7 @@ namespace ProjectEuler
                         matrix[i][j] = jmin[i];
             }
 
-            return min.ToString();
+            return min;
         }
     }
 }

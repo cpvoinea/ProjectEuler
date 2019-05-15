@@ -2,7 +2,7 @@
 {
     class Problem100 : IProblem
     {
-        public string GetResult()
+        public object GetResult()
         {
             long limit = 1000000000000;
             // x(n) = a(n)*b(n), y(n) = a(n)*c(n)
@@ -21,7 +21,7 @@
                 s = a * (b + c);
                 n++;
             }
-            return (a * b).ToString();
+            return (a * b);
         }
     }
 }

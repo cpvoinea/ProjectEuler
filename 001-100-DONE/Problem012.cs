@@ -59,9 +59,9 @@ namespace ProjectEuler
             return i * (i + 1) / 2;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
-            return GetTriangleWithDivisorsMoreThan(500).ToString();
+            return GetTriangleWithDivisorsMoreThan(500);
         }
     }
 }

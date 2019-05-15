@@ -5,7 +5,7 @@ namespace ProjectEuler
 {
     class Problem624 : IProblem
     {
-        public string GetResult()
+        public object GetResult()
         {
             // const int div = 1000000009;
             const long N = 1000000000000000000;
@@ -39,7 +39,7 @@ namespace ProjectEuler
                 //b %= div;
 
                 if (a % 23 == 0 && b % 23 == 0)
-                    return n.ToString();
+                    return n;
 
                 n++;
             }

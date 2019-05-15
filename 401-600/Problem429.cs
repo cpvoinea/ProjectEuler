@@ -4,7 +4,7 @@ namespace ProjectEuler
 {
     class Problem429 : IProblem
     {
-        public string GetResult()
+        public object GetResult()
         {
             const int limit = 100_000_000;
             const int div = 1_000_000_009;
@@ -33,7 +33,7 @@ namespace ProjectEuler
                 s = (s * (sp + 1)) % div;
             }
 
-            return s.ToString();
+            return s;
         }
     }
 }

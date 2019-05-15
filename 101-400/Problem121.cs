@@ -13,7 +13,7 @@
             return Count(turns, draw + 1) + turns * Count(turns, draw);
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             long wins = Count(0, 0);
             long count = 1;
@@ -23,7 +23,7 @@
 
             System.Console.WriteLine("{0} / {1}", wins, count);
 
-            return sum.ToString();
+            return sum;
         }
     }
 }

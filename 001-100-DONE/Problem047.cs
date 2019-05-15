@@ -4,7 +4,7 @@ namespace ProjectEuler
 {
     class Problem047 : IProblem
     {
-        public string GetResult()
+        public object GetResult()
         {
             int target = 4;
             int limit = 1000000;
@@ -39,7 +39,7 @@ namespace ProjectEuler
             }
 
             if (total == target)
-                return (i - 3).ToString();
+                return (i - 3);
             return "nope";
         }
     }

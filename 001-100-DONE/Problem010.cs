@@ -21,9 +21,9 @@
             return s;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
-            return GetPrimeSumBelow(2000000).ToString();
+            return GetPrimeSumBelow(2000000);
         }
     }
 }

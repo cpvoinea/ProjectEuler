@@ -71,7 +71,7 @@ namespace ProjectEuler
                 Shuffle(c, n);
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             long passes = 0;
             for (int i = 0; i < count; i++)
@@ -179,7 +179,7 @@ namespace ProjectEuler
             for (int i = 0; i < 10; i++)
                 Console.WriteLine("{0:00} = {1:0.00}%", sorted[i], hits[sorted[i]] * 100.0 / limit);
 
-            return sum.ToString();
+            return sum;
         }
     }
 }

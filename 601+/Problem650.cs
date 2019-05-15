@@ -65,7 +65,7 @@ namespace ProjectEuler
             return result;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             int[][] ordinalFactors = new int[limit + 1][];
             int[][] factorialFactors = FactorialFactors(limit, ref ordinalFactors);
@@ -80,7 +80,7 @@ namespace ProjectEuler
                 sum = (sum + DivisorSum(factors)) % div;
             }
 
-            return sum.ToString(); //538319652
+            return sum; //538319652
         }
     }
 }

@@ -14,7 +14,7 @@
             return result;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             int limit = 1000000;
             int s = 0;
@@ -24,7 +24,7 @@
                     s += i;
             }
 
-            return s.ToString();
+            return s;
         }
     }
 }

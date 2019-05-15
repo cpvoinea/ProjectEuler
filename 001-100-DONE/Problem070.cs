@@ -15,7 +15,7 @@ namespace ProjectEuler
             return new string(fs) == new string(ns);
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             const int limit = 10000000;
             double min = limit;
@@ -35,7 +35,7 @@ namespace ProjectEuler
                 }
             }
 
-            return minN.ToString();
+            return minN;
         }
     }
 }

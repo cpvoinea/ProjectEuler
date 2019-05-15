@@ -2,6 +2,6 @@
 {
     public interface IProblem
     {
-        string GetResult();
+        object GetResult();
     }
 }

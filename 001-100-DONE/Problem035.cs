@@ -2,7 +2,7 @@
 {
     class Problem035 : IProblem
     {
-        public string GetResult()
+        public object GetResult()
         {
             int limit = 1000000;
             int count = 1;
@@ -46,7 +46,7 @@
                 }
             }
 
-            return count.ToString();
+            return count;
         }
     }
 }

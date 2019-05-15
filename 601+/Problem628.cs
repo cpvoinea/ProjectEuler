@@ -2,7 +2,7 @@
 {
     class Problem628 : IProblem
     {
-        public string GetResult()
+        public object GetResult()
         {
             const long mod = 1008691207;
             const long limit = 100000000;
@@ -19,7 +19,7 @@
                 fact = (fact * n) % mod;
             }
 
-            return f.ToString();
+            return f;
         }
     }
 }

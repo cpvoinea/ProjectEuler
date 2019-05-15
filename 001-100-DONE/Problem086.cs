@@ -129,7 +129,7 @@ namespace ProjectEuler
             return result;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             long limit = 3000;
             var pyth = GeneratePythTriples(limit);
@@ -138,7 +138,7 @@ namespace ProjectEuler
             int n = 101;
             while (cube.Count(c => c.Smaller(n)) < 1000000)
                 n++;
-            return n.ToString();
+            return n;
         }
     }
 }

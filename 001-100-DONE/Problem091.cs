@@ -2,7 +2,7 @@
 {
     class Problem091 : IProblem
     {
-        public string GetResult()
+        public object GetResult()
         {
             const int n = 50;
             int c = 0;
@@ -30,7 +30,7 @@
                                 c++;
                         }
                 }
-            return (c / 2).ToString();
+            return (c / 2);
         }
     }
 }

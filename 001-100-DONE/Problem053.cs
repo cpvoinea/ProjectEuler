@@ -2,7 +2,7 @@
 {
     class Problem053 : IProblem
     {
-        public string GetResult()
+        public object GetResult()
         {
             int limit = 1000000;
             int s = 0;
@@ -18,7 +18,7 @@
                 s += n - 2 * r + 1;
             }
 
-            return s.ToString();
+            return s;
         }
     }
 }

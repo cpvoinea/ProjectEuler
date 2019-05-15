@@ -56,7 +56,7 @@ namespace ProjectEuler
             return count;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             int[] oddDigitSums = { 23, 34, 45, 56, 67 };
             long count = 0;
@@ -72,7 +72,7 @@ namespace ProjectEuler
                 }
             }
 
-            return count.ToString();
+            return count;
         }
     }
 }

@@ -2,7 +2,7 @@
 {
     class Problem097 : IProblem
     {
-        public string GetResult()
+        public object GetResult()
         {
             const int pow = 7830457;
             const long dig = 10000000000;
@@ -11,7 +11,7 @@
                 num = num * 2 % dig;
             num = (num + 1) % dig;
 
-            return num.ToString();
+            return num;
         }
     }
 }

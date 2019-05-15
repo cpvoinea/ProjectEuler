@@ -19,7 +19,7 @@
             }
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             int count = 0;
             Frac f = new Frac { N = "2", D = "1" };
@@ -30,7 +30,7 @@
                     count++;
             }
 
-            return count.ToString();
+            return count;
         }
     }
 }

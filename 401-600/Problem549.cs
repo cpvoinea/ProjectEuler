@@ -69,13 +69,13 @@ namespace ProjectEuler
             return 0;
         }
 
-        public string GetResult()
+        public object GetResult()
         {
             long sum = 0;
             for (int i = 2; i <= limit; i++)
                 sum += GetMaxFact(i);
 
-            return sum.ToString();
+            return sum;
         }
     }
 }
