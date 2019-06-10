@@ -183,7 +183,7 @@ namespace ProjectEuler
             return true;
         }
 
-        internal static string AddLargeInt(string n1, string n2)
+        internal static string AddLargeInt(string n1, string n2, int? limit = null)
         {
             if (n1 == "" || n2 == "")
                 return n1 + n2;
@@ -191,6 +191,8 @@ namespace ProjectEuler
             int l1 = n1.Length;
             int l2 = n2.Length;
             int min = l1 < l2 ? l1 : l2;
+            if (limit.HasValue && min > limit)
+                min = limit.Value;
             string result = "";
             int r = 0;
             for (int i = 0; i < min; i++)
