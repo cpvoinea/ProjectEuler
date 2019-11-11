@@ -267,7 +267,7 @@ namespace ProjectEuler
 
         public object GetResult()
         {
-            using (StreamReader sr = new StreamReader("Resources\\Problem054.txt"))
+            using (StreamReader sr = File.OpenText("Resources\\Problem054.txt"))
             {
                 int count = 0;
                 while (!sr.EndOfStream)

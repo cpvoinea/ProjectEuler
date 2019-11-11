@@ -152,16 +152,14 @@ namespace ProjectEuler
 
         public object GetResult()
         {
-            StreamReader sr = new StreamReader("Resources\\Problem018.txt");
             List<int[]> lines = new List<int[]>();
-            while (!sr.EndOfStream)
-                lines.Add(sr.ReadLine().Split().Select(s => int.Parse(s)).ToArray());
+            using (StreamReader sr = File.OpenText("Resources\\Problem018.txt"))
+                while (!sr.EndOfStream)
+                    lines.Add(sr.ReadLine().Split().Select(s => int.Parse(s)).ToArray());
 
             Triangle t1 = Triangle.Read(lines, 0, 0, lines.Count);
-            sr.Close();
-            //Triangle t2 = new Triangle(lines);
-
             int sum1 = GetTriangleMaxSum(t1);
+
             return sum1;
         }
     }

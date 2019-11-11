@@ -60,7 +60,7 @@ namespace ProjectEuler
         {
             int currentDivision = 0;
             int divisionCount = 0;
-            for (int i = 1; i < numbers.Count; i++)
+            for (int i = 1; i < numbers.Length; i++)
             {
                 if (i / 100 > currentDivision)
                 {

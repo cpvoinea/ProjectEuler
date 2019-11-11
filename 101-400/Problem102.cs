@@ -33,7 +33,7 @@ namespace ProjectEuler
         public object GetResult()
         {
             int count = 0;
-            using (StreamReader sr = new StreamReader("Resources\\Problem102.txt"))
+            using (StreamReader sr = File.OpenText("Resources\\Problem102.txt"))
                 while (!sr.EndOfStream)
                 {
                     string[] coords = sr.ReadLine().Split(',');

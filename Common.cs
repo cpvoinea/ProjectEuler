@@ -283,7 +283,7 @@ namespace ProjectEuler
 
         internal static string GetTextFromFile(string fileName)
         {
-            using (StreamReader sr = new StreamReader(fileName))
+            using (StreamReader sr = File.OpenText(fileName))
                 return sr.ReadToEnd();
         }
     }

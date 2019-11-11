@@ -1,4 +1,4 @@
-2 primes 17/50 1608 30%
+2 primes 16/50 1608 30%
 3* decimator 3/10 808 35%
 4 lucky 21/50 1114 45%
 5 triangle 11/25 343 50%
@@ -10,10 +10,10 @@
 11 archivist 184+/326+ 584 50%
 * level13 183/325+ 552 50%
 
-20% 8
+20% 7
 - 1 triangle 630
 - 2 lucky 601d 613d
-- 4 primes 587 601d 607 613d
+- 3 primes 601d 607 613d
 - 2 difficulty 609 618 659 (DONE)
 25% 14
 - 1 triangle 351

@@ -81,12 +81,9 @@ namespace ProjectEuler
         public object GetResult()
         {
             List<int[]> lines = new List<int[]>();
-            StreamReader sr = new StreamReader("Resources\\Problem067.txt");
-            while (!sr.EndOfStream)
-                lines.Add(sr.ReadLine().Split().Select(s => int.Parse(s)).ToArray());
-            //foreach (Node n in lines[lines.Count - 1])
-            //    n.left = n.right = false;
-            sr.Close();
+            using (StreamReader sr = File.OpenText("Resources\\Problem067.txt"))
+                while (!sr.EndOfStream)
+                    lines.Add(sr.ReadLine().Split().Select(s => int.Parse(s)).ToArray());
 
             return GetTriangleMaxSum(lines);
         }
