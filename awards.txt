@@ -13,8 +13,8 @@
 20% 7
 - 1 triangle 630
 - 2 lucky 601d 613d
-- 3 primes 601d 607 613d
-- 2 difficulty 609 618 659 (DONE)
+- 4 primes 601d 607 613d 659
+- 2 difficulty 609 618 (DONE)
 25% 14
 - 1 triangle 351
 - 1 lucky 643d
@@ -39,12 +39,12 @@
 - 3 first200 110 122 174
 - 4 lucky  231d 235 327 487
 45% 16
-- 1 triangle 105d
+- 3 triangle 105d 666 703
 - 3 lucky 105d 111d 129d (DONE)
 - 16 first200 103 105d 109 111d 118 129d 130 132 134 135 138 142 162 164 183 197
 50% 14
 - 1 fibo 144d
-- 3 triangle 136d 190 300 (DONE)
+- 1 triangle 136d (DONE)
 - 12 first200 106 127 133 136d 137 139 144d 146 148 149 166 169
 55% 9
 - 9 first200 126 128 140 150 158 172 178 185 193
