@@ -4,9 +4,9 @@ namespace ProjectEuler
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main(string[] _)
         {
-            Console.WriteLine(new Problem725().GetResult());
+            Console.WriteLine(new Problem816().GetResult());
         }
     }
 }

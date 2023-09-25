@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace ProjectEuler
 {
-    public class Common
+    public static class Common
     {
         internal static int Fact(int n)
         {
@@ -182,6 +182,9 @@ namespace ProjectEuler
                     return false;
             return true;
         }
+
+        internal static long Reverse(this long n)
+            => long.Parse(new string(n.ToString().Reverse().ToArray()));
 
         internal static string AddLargeInt(string n1, string n2, int? limit = null)
         {
